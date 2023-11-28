@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import './Login.css'; // Make sure to have the correct path
 import axios from "axios";
 const Login = () => {
-    const [usename, setusename] = useState('');
+
     const [password, setPassword] = useState('');
-    const [usenames, setusenames] = useState('');
+    const [names, setnames] = useState('');
     const [passwords, setPasswords] = useState('');
     const [phoneNumber, setPhones] = useState('');
     const handleLogin_log = () => {
         // Handle login logic here (e.g., send a request to a server)
-        console.log('usename:', usename);
+        console.log('phoneNumber:', phoneNumber);
         console.log('Password:', password);
         axios.post('http://localhost:8088/users/login', {
-            phone_number: usename,
+            phone_number: phoneNumber,
             password: password,
           })
           .then(function (response) {
@@ -27,13 +27,13 @@ const Login = () => {
     };
     const handleLogin_sign = () => {
         // Handle login logic here (e.g., send a request to a server)
-        console.log('usenames:', usenames);
+        console.log('names:', names);
         console.log('Passwords:', passwords);
         console.log('phoneNumber:', phoneNumber);
         // Add your login logic here
         axios.post('http://localhost:8088/users/register', {
             phone_number: phoneNumber,
-            name: usenames,
+            name: names,
             password: passwords,
           })
           .then(function (response) {
@@ -50,7 +50,7 @@ const Login = () => {
             <div className="signup">
                 <form>
                     <label htmlFor="chk" aria-hidden="true">Sign up</label>
-                    <input type="text" name="txt" placeholder="User name" required="" value={usenames} onChange={(e) => setusenames(e.target.value)} />
+                    <input type="text" name="txt" placeholder="User name" required="" value={names} onChange={(e) => setnames(e.target.value)} />
                     <input type="phoneNumber" name="phoneNumber" placeholder="phoneNumber" required="" value={phoneNumber} onChange={(e) => setPhones(e.target.value)}/>
                     <input type="password" name="pswd" placeholder="Password" required="" value={passwords} onChange={(e) => setPasswords(e.target.value)}/>
                     <button type="button" onClick={handleLogin_sign}>Sign up</button>
@@ -61,12 +61,12 @@ const Login = () => {
                 <form>
                     <label htmlFor="chk" aria-hidden="true">Login</label>
                     <input
-                        type="usename"
-                        name="usename"
-                        placeholder="usename"
+                        type="phoneNumber"
+                        name="phoneNumber"
+                        placeholder="phoneNumber"
                         required=""
-                        value={usename}
-                        onChange={(e) => setusename(e.target.value)}
+                        value={phoneNumber}
+                        onChange={(e) => setPhones(e.target.value)}
                     />
                     <input
                         type="password"
