@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './Login.css'; // Make sure to have the correct path
-
+import axios from "axios";
 const Login = () => {
     const [usename, setusename] = useState('');
     const [password, setPassword] = useState('');
@@ -11,7 +11,17 @@ const Login = () => {
         // Handle login logic here (e.g., send a request to a server)
         console.log('usename:', usename);
         console.log('Password:', password);
-        console.log('Password:', password);
+        axios.post('http://localhost:8088/users/login', {
+            phone_number: usename,
+            password: password,
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+        // console.log('Password:', password);
 
         // Add your login logic here
     };
@@ -21,6 +31,17 @@ const Login = () => {
         console.log('Passwords:', passwords);
         console.log('phoneNumber:', phoneNumber);
         // Add your login logic here
+        axios.post('http://localhost:8088/users/register', {
+            phone_number: phoneNumber,
+            name: usenames,
+            password: passwords,
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     };
     return (
         <div className="main">
