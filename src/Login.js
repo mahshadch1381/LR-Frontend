@@ -29,8 +29,8 @@ const Login = () => {
                 <form>
                     <label htmlFor="chk" aria-hidden="true">Sign up</label>
                     <input type="text" name="txt" placeholder="User name" required="" value={usenames} onChange={(e) => setusenames(e.target.value)} />
-                    <input type="phoneNumber" name="phoneNumber" placeholder="phoneNumber" required="" value={passwords} onChange={(e) => setPhones(e.target.value)}/>
-                    <input type="password" name="pswd" placeholder="Password" required="" value={phoneNumber} onChange={(e) => setPasswords(e.target.value)}/>
+                    <input type="phoneNumber" name="phoneNumber" placeholder="phoneNumber" required="" value={phoneNumber} onChange={(e) => setPhones(e.target.value)}/>
+                    <input type="password" name="pswd" placeholder="Password" required="" value={passwords} onChange={(e) => setPasswords(e.target.value)}/>
                     <button type="button" onClick={handleLogin_sign}>Sign up</button>
                 </form>
             </div>
