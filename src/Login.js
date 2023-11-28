@@ -11,6 +11,7 @@ const Login = () => {
         // Handle login logic here (e.g., send a request to a server)
         console.log('usename:', usename);
         console.log('Password:', password);
+        console.log('Password:', password);
 
         // Add your login logic here
     };
