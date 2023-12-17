@@ -6,6 +6,26 @@ body{
     align-items: center;
     min-height: 100vh;
     font-family: 'Jost', sans-serif;
+    background-image: url("login.jpg");
+    background-size: cover;
+    
+
+}
+.main{
+    width: 350px;
+    height: 500px;
+    background: rgb(85, 120, 210);
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+}
+#chk{
+    display: none;
+}
+.signup{
+    position: relative;
+    width:100%;
+    height: 100%;
 }
 label{
     color: #fff;
@@ -54,4 +74,27 @@ button:hover{
     background: #6d44b8;
     border-style: solid;
     border-color: #fff;
+}
+.login{
+    height: 460px;
+    background: #eee;
+    border-radius: 70% / 10%;
+    transform: translateY(-200px);
+
+
+}
+.login label{
+    color: #573b8a;
+    transform: scale(1);
+
+}
+
+#chk:checked ~ .login{
+    transform: translateY(-600px);
+}
+#chk:checked ~ .login label{
+    transform: scale(1);
+}
+#chk:checked ~ .signup label{
+    transform: scale(1);
 }
