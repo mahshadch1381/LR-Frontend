@@ -1,5 +1,4 @@
-
-.first{
+.first {
     position: fixed;
     top: 0;
     left: 0;
@@ -7,8 +6,11 @@
     height: 100vh;
     background-image: url("./../utils/login.jpg");
     background-size: cover;
+
 }
-.main{
+
+.main {
+
     position: fixed;
     top: 20lvh;
     left: 20lvh;
@@ -18,17 +20,36 @@
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 5px 20px 50px #000;
-}
-#chk{
-    display: none;
-}
-.signup{
-    position: relative;
-    width:100%;
-    height: 100%;
+
 }
 
-.login{
+#chk {
+    display: none;
+}
+
+.signup {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+
+}
+.signup label{
+    
+        color: #fff;
+        font-size: 2.3em;
+        justify-content: center;
+        display: flex;
+        margin: 60px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .5s ease-in-out;
+    
+}
+
+
+
+.login {
     height: 460px;
     background: #eee;
     border-radius: 70% / 10%;
@@ -36,18 +57,33 @@
 
 
 }
-.login label{
+
+.login label {
+    
+        color: #fff;
+        font-size: 2.3em;
+        justify-content: center;
+        display: flex;
+        margin: 60px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .5s ease-in-out;
+    
     color: #573b8a;
     transform: scale(1);
 
 }
 
-#chk:checked ~ .login{
+
+#chk:checked~.login {
     transform: translateY(-600px);
 }
-#chk:checked ~ .login label{
+
+#chk:checked~.login label {
     transform: scale(1);
 }
-#chk:checked ~ .signup label{
+
+#chk:checked~.signup label {
+
     transform: scale(1);
 }
