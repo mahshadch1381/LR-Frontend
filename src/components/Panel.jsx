@@ -1,6 +1,8 @@
 import React from 'react';
 import ProductCard from './ProductCard';
-import styles from './../styles/Login.module.css';
+import styles from './../styles/Panel.module.css';
+import styles2 from './../styles/Sidebar.module.css';
+import {Link} from "react-router-dom";
 
 //TODO API for taking favorit laptop
 
@@ -30,7 +32,8 @@ const Panel = () => {
 
     return (
         <>
-            <div  >
+            <div className={styles.first_panel} >
+                <h1>Your favorite laptop</h1>
                 <ProductCard 
                 image={"https://image.torob.com/base/images/3v/Fr/3vFrivyQ5BoZA3N-.jpg"}
                 description={"ROG STRIX G513RC"}
@@ -40,22 +43,23 @@ const Panel = () => {
                 isfavorit = {false}
                 />
 
-                <h1>here is users Panel</h1>
-                <button className="myButton" onClick={logout}>
-                    Logout
-                </button >
 
-                <button onClick={moveToProfile} >
-                    Profile
-                </button>
+                <div className={styles2.sidebar}>
+                    <Link to="/" className={styles2.sidebarLink}>
+                        Home
+                    </Link>
+                    <button className={styles2.mybutton4} onClick={moveToSearch}>
+                        Search for Laptop
+                    </button>
+                    <button className={styles2.mybutton4} onClick={moveToProfile}>
+                        Profile
+                    </button>
+                    <button className={styles2.mybutton4} onClick={logout}>
+                        Logout
+                    </button>
 
-                <button onClick={moveToSearch}>
-                    Serch for Laptop
-                </button>
+                </div>
 
-                <button onClick={moveToFavorites}>
-                    Favorites
-                </button>
             </div>
 
         </>
