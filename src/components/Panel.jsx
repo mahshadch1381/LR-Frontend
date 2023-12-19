@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard';
-import styles from "./../styles/Panel.module.css";
+import styles from './../styles/Login.module.css';
 
 //TODO API for taking favorit laptop
 
@@ -30,7 +30,7 @@ const Panel = () => {
 
     return (
         <>
-            <div>
+            <div  >
                 <ProductCard 
                 image={"https://image.torob.com/base/images/3v/Fr/3vFrivyQ5BoZA3N-.jpg"}
                 description={"ROG STRIX G513RC"}
@@ -41,9 +41,9 @@ const Panel = () => {
                 />
 
                 <h1>here is users Panel</h1>
-                <button onClick={logout}>
+                <button className="myButton" onClick={logout}>
                     Logout
-                </button>
+                </button >
 
                 <button onClick={moveToProfile} >
                     Profile

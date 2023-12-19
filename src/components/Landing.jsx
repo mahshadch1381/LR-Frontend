@@ -1,14 +1,28 @@
 import React from 'react';
 import styles from "./../styles/Landing.module.css"
-import "./../styles/Base.module.css"
+
 const Landing = () => {
     return (
-        <div className={styles.first}>
-            <h1 className={styles.good}>Welcome to the Landing Page</h1>
-            <a className={styles.this} href="/login">
-                <button className={styles.bot}>Login</button>
-            </a>
-        </div>
+        <div className={styles.back} >
+            <img className={styles["left-image"]}  />
+            <div className={styles.main2}>
+                <h1 >Welcome to the Landing Page</h1>
+                <div className={styles.button3}>
+                    <div >
+                        <a  href="/login">
+                            <button >User login</button>
+                        </a>
+                    </div>
+                    <div >
+                        <a  href="/follow_us">
+                            <button >Seller login</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+
     );
 };
 

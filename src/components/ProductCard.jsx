@@ -8,12 +8,14 @@ const ProductCard = (props) => {
     const [fav , setfav] = useState(isfavorit)
     
     return (
-        <a href={"/panel/" + id} className={styles.productcard} >
+        <div className={styles.productcard}>
+        <a href={"/panel/" + id}  >
           <img className={styles.productcardimage} src={image} />
           <p className={styles.productcardbrand}>{brand}</p>
           <p className={styles.productcarddescription}>{description}</p>
           <p className={styles.productcardprice}>{formattedPrice}</p>
-        
+        </a>
+
           <button onClick={()=>setfav(!fav)} className={fav?  styles.productcardbtnwishlistis : styles.productcardbtnwishlist }>
             <svg viewBox="0 0 18 16" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -22,7 +24,7 @@ const ProductCard = (props) => {
               />
             </svg>
           </button>
-        </a>
+        </div>
       );
 };
 
