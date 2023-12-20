@@ -1,0 +1,95 @@
+
+.back{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./../utils/ax2.jpg");
+    background-size: cover;
+    margin-left: 200px;
+}
+.main2 {
+
+}
+
+.main2 a {
+    text-decoration: none;
+}
+.main2 h1{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+    margin-left: -120px;
+    color: #eeeeee;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+.main2 h2{
+    text-align: center;
+    margin-top: 80px;
+    font-size: 30px;
+    margin-left: -120px;
+
+}
+.main2 button {
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 70px;
+    padding-right: 70px;
+    display: flex;
+    color: #ffffff;
+    background: #1b1b1c;
+    font-size: 1em;
+    font-weight: bold;
+    outline: none;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #1b1b1c;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
+    margin :10px;
+    font-family: 'Georgia', serif;
+
+}
+.main2 button :hover {
+    background-color: #555; /* Change the button background color on hover */
+}
+
+.left-image {
+    position: relative;
+    transform: translate(20%, 10%);
+    width: 200px;
+    height: auto;
+    z-index: 1;
+    content: url('../utils/follow.jpg');
+    box-shadow: 1px 20px 50px #2062b9;
+    border-width: 2px;
+    border-color: #2062b9;
+    border-radius: 5px;
+
+}
+
+
+.button3 {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    font-weight: bold;
+    outline: none;
+    margin-top: 30px ;
+    transition: .2s ease-in;
+    cursor: pointer;
+    margin-left: -120px;
+    font-family: 'Georgia', serif;
+}
+
+.button3 button{
+    width: 370px;
+    height: 50px;
+
+}
