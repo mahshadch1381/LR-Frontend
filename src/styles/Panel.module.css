@@ -37,8 +37,8 @@
 .container {
     display: flex;
     overflow-y: auto; 
-    margin-left: 480px;
-    margin-right: 250px;
+    margin-left: 440px;
+    margin-right: 140px;
     margin-top: 150px;
     /* z-index: 100; */
   }

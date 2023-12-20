@@ -71,14 +71,9 @@ const Panel = () => {
 
     return (
         <>
-
-
-
-
             <div className={styles3.panel_right}>
 
                 <h1 className={styles3.panel_rightfont}>Your favorite laptop</h1>
-
 
                 <div className={styles2.sidebar}>
                     <Link to="/" className={styles2.sidebarLink}>
