@@ -1,15 +1,24 @@
 .productcard {
-    position: relative;
-    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 30rem;
+    width: 26rem;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 30px;
     overflow: hidden;
     box-shadow: 2px 2px 5px 0px rgba(0, 64, 128, 0.1);
+    margin-left: -310px;
+    margin-bottom: 600px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #2062b9;
+
   }
+.productcard button:hover{
+  background: #fa0505;
+  border-style: solid;
+  border-color: #fff;
+}
   
   .productcardimage {
     max-width: 100%;
@@ -56,7 +65,7 @@
     height: 40px;
     width: 40px;
     border: none;
-    background-color: #9270d2;
+    background-color: #fa0505;
     padding: 12px 10px 10px;
     box-shadow: 2px 2px 5px 0px rgba(0, 64, 128, 0.1);
   }

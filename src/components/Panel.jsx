@@ -2,6 +2,7 @@ import React from 'react';
 import ProductCard from './ProductCard';
 import styles from './../styles/Panel.module.css';
 import styles2 from './../styles/Sidebar.module.css';
+import styles3 from './../styles/Penelright.module.css';
 import {Link} from "react-router-dom";
 
 //TODO API for taking favorit laptop
@@ -31,9 +32,9 @@ const Panel = () => {
     }
 
     return (
-        <>
+        <div className={styles3.panel_right}>
+            <h1 className={styles3.panel_rightfont}>Your favorite laptop</h1>
             <div className={styles.first_panel} >
-                <h1>Your favorite laptop</h1>
                 <ProductCard 
                 image={"https://image.torob.com/base/images/3v/Fr/3vFrivyQ5BoZA3N-.jpg"}
                 description={"ROG STRIX G513RC"}
@@ -42,8 +43,6 @@ const Panel = () => {
                 id = {123}
                 isfavorit = {false}
                 />
-
-
                 <div className={styles2.sidebar}>
                     <Link to="/" className={styles2.sidebarLink}>
                         Home
@@ -62,7 +61,7 @@ const Panel = () => {
 
             </div>
 
-        </>
+        </div>
     );
 };
 

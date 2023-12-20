@@ -10,7 +10,7 @@
 }
 .first_panel h1{
     font-size: 50px;
-    margin-left:300px ;
+    margin-left:100px ;
     color: #1b1b1c;
 }
 .mybutton4{
@@ -32,8 +32,4 @@
     transition: .2s ease-in;
     cursor: pointer;
 }
-button:hover{
-    background: #fa0505;
-    border-style: solid;
-    border-color: #fff;
-}
+

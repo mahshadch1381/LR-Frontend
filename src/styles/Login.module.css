@@ -8,23 +8,20 @@
     background-size: cover;
 
 }
-
-
 .main {
 
     position: fixed;
-    top: 20lvh;
-    left: 20lvh;
-    width: 350px;
-    height: 500px;
-    background: rgb(85, 120, 210);
+    top: 9lvh;
+    left: 3lvh;
+    width: 400px;
+    height: 530px;
+    background: #2062b9;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 5px 20px 50px #000;
 
 }
 .main input {
-
     width: 60%;
     height: 20px;
     background: #e0dede;
@@ -36,7 +33,7 @@
     border-radius: 5px;
     border-style: solid;
     border-width: 2px;
-    border-color: blue
+    border-color: #1b1b1c
 }
 .main button{
     width: 60%;
@@ -45,7 +42,7 @@
     justify-content: center;
     display: block;
     color: #fff;
-    background: #573b8a;
+    background: #1b1b1c;
     font-size: 1em;
     font-weight: bold;
     margin-top: 20px;
@@ -56,10 +53,11 @@
     border-radius: 5px;
     transition: .2s ease-in;
     cursor: pointer;
+    font-family: 'Georgia', serif;
 }
 .main button:hover{
 
-        background: #6d44b8;
+        background: #1b1b1c;
         border-style: solid;
         border-color: #fff;
 
@@ -76,7 +74,6 @@
 
 }
 .signup label{
-    
         color: #fff;
         font-size: 2.3em;
         justify-content: center;
@@ -95,7 +92,7 @@
     background: #eee;
     border-radius: 70% / 10%;
     transform: translateY(-200px);
-
+    transition: .8s ease-in-out;
 
 }
 
@@ -110,7 +107,7 @@
         cursor: pointer;
         transition: .5s ease-in-out;
     
-    color: #573b8a;
+    color: #1b1b1c;
     transform: scale(1);
 
 }

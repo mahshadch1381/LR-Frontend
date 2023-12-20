@@ -1,4 +1,4 @@
-.sidebar {
+.profile_sidebar {
     height: 100%;
     width: 300px;
     position: fixed;
@@ -9,15 +9,16 @@
     color: white;
 }
 
-.sidebarLink {
+.profile_sidebarLink {
     padding: 20px;
     text-decoration: none;
     font-size: 40px;
     color: white;
     display: block;
+    margin-left:73px;
 }
 
-.mybutton4 {
+.profile_sidebar_button {
     width: 200px;
     height: 60px;
     padding: 20px;
@@ -35,9 +36,8 @@
     transition: .2s ease-in;
     margin-bottom: 30px;
     cursor: pointer;
-    font-family: 'Georgia', serif;
 }
 
-.mybutton4:hover {
+.profile_sidebar_button:hover {
     background-color: #555; /* Change the button background color on hover */
 }
