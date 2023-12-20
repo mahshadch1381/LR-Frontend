@@ -9,7 +9,7 @@ const Login = () => {
     const [phoneNumber, setPhones] = useState('');
     const handleLogin_log = () => {
 
-        axios.post('http://172.20.10.4:8088/users/login', {
+        axios.post('http://localhost:8088/users/login', {
             phone_number: usename,
             password: password,
         })
@@ -24,7 +24,7 @@ const Login = () => {
     };
     const handleLogin_sign = () => {
 
-        axios.post('172.20.10.4:8088/users/register', {
+        axios.post('http://localhost:8088/users/register', {
             phone_number: phoneNumber,
             name: usenames,
             password: passwords,

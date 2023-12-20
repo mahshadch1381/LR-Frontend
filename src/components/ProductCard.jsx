@@ -9,6 +9,7 @@ const ProductCard = (props) => {
     
     return (
         <div className={styles.productcard}>
+          
         <a href={"/panel/" + id}  >
           <img className={styles.productcardimage} src={image} />
           <p className={styles.productcardbrand}>{brand}</p>

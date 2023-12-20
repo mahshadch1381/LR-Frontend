@@ -8,7 +8,7 @@ const Landing = () => {
         <div className={styles.back} >
 
             <div className={styles.main2}>
-                <h1 >Welcome to the our recommender laptop app</h1>
+                <h1 >Welcome to our recommender laptop app</h1>
                 <h2 >Please login or signup first.</h2>
                 <div className={styles.button3}>
                     <div >
