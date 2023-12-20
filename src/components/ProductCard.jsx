@@ -4,17 +4,15 @@ import styles from "./../styles/ProductCard.module.css";
 
 
 const ProductCard = (props) => {
-    const { image, description, brand, formattedPrice, id, isfavorit } = props;
+    const {isfavorit, id, cpu, ram, ssd, hdd, graphic_card, screen_size, company, image_url, redirect_url } = props;
     const [fav , setfav] = useState(isfavorit)
     
     return (
         <div className={styles.productcard}>
           
         <a href={"/panel/" + id}  >
-          <img className={styles.productcardimage} src={image} />
-          <p className={styles.productcardbrand}>{brand}</p>
-          <p className={styles.productcarddescription}>{description}</p>
-          <p className={styles.productcardprice}>{formattedPrice}</p>
+          <img className={styles.productcardimage} src={image_url} />
+          <p className={styles.productcardbrand}>{cpu}</p>
         </a>
 
           <button onClick={()=>setfav(!fav)} className={fav?  styles.productcardbtnwishlistis : styles.productcardbtnwishlist }>

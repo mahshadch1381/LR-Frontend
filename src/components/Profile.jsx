@@ -1,11 +1,27 @@
 import React from 'react';
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import styles from "./../styles/Profile.module.css";
 import styles2 from "./../styles/ProfileSidebar.module.css";
 import {Link} from "react-router-dom";
 
-//TODO request for taking data from server
+//TODO request for taking data from server //done
 //TODO request for sending edited data to server
+
+
+
+const logout = () => {
+    localStorage.removeItem('token')
+    window.location.href = '/'
+}
+
+const moveToSearch = () => {
+    window.location.href = '/search'
+}
+
+const moveToPanel = () => {
+    window.location.href = '/panel'
+}
 
 const Profile = () => {
     const [usenames, setusenames] = useState('');
@@ -14,6 +30,25 @@ const Profile = () => {
     if (!localStorage.getItem('token')) {
         window.location.href = '/'
     }
+
+
+    const [data, setData] = useState({ Info: [] });
+
+    const getData = () => {
+        axios.get("http://127.0.0.1:8088/users/profile", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+            .then(res => {
+                setData(res.data)
+            }
+            )
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
+    useEffect(() => {
+        getData();
+    }, []);
+
     return (
         <div className={styles.profile_right}>
             <h1 className={styles.profile_right_font}>Here is the user's Profile</h1>
@@ -23,7 +58,7 @@ const Profile = () => {
                         className={styles.profile_input}
                         type="text"
                         name="txt"
-                        placeholder="Username"
+                        placeholder={data.Info.name}
                         required=""
                         value={usenames}
                         onChange={(e) => setusenames(e.target.value)}
@@ -32,7 +67,7 @@ const Profile = () => {
                         className={styles.profile_input}
                         type="tel"
                         name="phoneNumber"
-                        placeholder="Phone Number"
+                        placeholder={data.Info.phone_number}
                         required=""
                         value={phoneNumber}
                         onChange={(e) => setPhones(e.target.value)}
@@ -53,13 +88,13 @@ const Profile = () => {
                 <Link to="/" className={styles2.profile_sidebarLink}>
                     Home
                 </Link>
-                <button className={styles2.profile_sidebar_button} /*onClick={moveToSearch}*/>
+                <button className={styles2.profile_sidebar_button} onClick={moveToSearch}>
                     Search for Laptop
                 </button>
-                <button className={styles2.profile_sidebar_button} /*onClick={moveToPanel}*/>
+                <button className={styles2.profile_sidebar_button} onClick={moveToPanel}>
                     Panel
                 </button>
-                <button className={styles2.profile_sidebar_button} /*nClick={logout}*/>
+                <button className={styles2.profile_sidebar_button} nClick={logout}>
                     Logout
                 </button>
             </div>

@@ -7,6 +7,10 @@ import {Link} from "react-router-dom";
 
 //TODO API for finding best laptop
 
+const moveToPanel = () => {
+    window.location.href = '/panel'
+}
+
 const Search = () => {
     const [cpu, setcpu] = useState('');
     const [ram, setram] = useState('');
@@ -86,7 +90,7 @@ const Search = () => {
                         </select>
                         <div className={styles2.search_button3}>
                             <div><button className={styles2.mybutton6} type="button" >Search</button></div>
-                            <div><button className={styles2.mybutton6} type="button" >Panel</button></div>
+                            <div><button className={styles2.mybutton6} onClick={moveToPanel} type="button" >Panel</button></div>
                         </div>
 
                     </form>
