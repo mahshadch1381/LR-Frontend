@@ -7,7 +7,7 @@ import styles2 from './../styles/Sidebar.module.css';
 import styles3 from './../styles/Penelright.module.css';
 import { Link } from "react-router-dom";
 
-//TODO API for taking favorit laptop
+//TODO API for taking favorit laptop //done
 //TODO API for taking user //done
 
 
@@ -38,33 +38,6 @@ const Panel = () => {
 
 
 
-    const laptops = [
-        {
-            image: "https://image.torob.com/base/images/_3/79/_379dUgbo3opHhCk.jpg_/0x352.webp",
-            description: "dlsaj;kfjd;af",
-            brand: "",
-            formattedPrice: "$795",
-            id: 123,
-            isfavorit: false
-        },
-
-        {
-            image: "https://image.torob.com/base/images/YJ/ak/YJaktypPem--_GQW.jpg_/0x352.webp",
-            description: "ladsjhfdklajhfjdkas",
-            brand: "",
-            formattedPrice: "$795",
-            id: 567,
-            isfavorit: false
-        },
-        {
-            image: "https://image.torob.com/base/images/iK/Qm/iKQmA8vsZybWSvcA.jpg_/0x352.webp",
-            description: "jfadslkfj;a",
-            brand: "",
-            formattedPrice: "$795",
-            id: 890,
-            isfavorit: false
-        }
-    ]
 
 
 
@@ -105,9 +78,7 @@ const Panel = () => {
       }, []); // Log the laptops state whenever it changes
     
 
-    const laps = laptop.map(laptop => <ProductCard
-        id={laptop.id}
-    />);
+
     return (
 
         <>
