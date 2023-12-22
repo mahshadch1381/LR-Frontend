@@ -1,4 +1,4 @@
-.profile_sidebar {
+.AboutUs_sidebar {
     height: 100%;
     width: 300px;
     position: fixed;
@@ -9,7 +9,7 @@
     color: white;
 }
 
-.profile_sidebarLink {
+.AboutUs_sidebarLink {
     padding: 20px;
     text-decoration: none;
     font-size: 40px;
@@ -21,7 +21,7 @@
     font-family: 'Georgia', serif;
 }
 
-.profile_sidebar_button {
+.AboutUs_button {
     width: 200px;
     height: 60px;
     padding: 20px;
@@ -39,8 +39,18 @@
     transition: .2s ease-in;
     margin-bottom: 30px;
     cursor: pointer;
+    font-family: 'Georgia', serif;
 }
 
-.profile_sidebar_button:hover {
+.AboutUs_button:hover {
     background-color: #555; /* Change the button background color on hover */
+}
+.AboutUs_p_style{
+    font-family: Courier New, monospace;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    text-shadow: 5px 5px 3px #2062b9 ;
 }

@@ -155,8 +155,8 @@ const Panel = () => {
                         Home
                     </Link>
 
-                    {/* <p>welcome {user.Info.name}</p> */}
-                    <p>welcome Amirreza Ahmadi</p>
+                    {/* <p className={styles2.p_style}>Welcome {user.Info.name}</p> */}
+                    <p className={styles2.p_style}>Welcome Amirreza Ahmadi</p>
 
                     <button className={styles2.mybutton4} onClick={moveToSearch}>
                         Search for Laptop

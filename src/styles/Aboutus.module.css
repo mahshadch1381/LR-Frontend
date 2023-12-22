@@ -1,0 +1,44 @@
+.AboutUs{
+
+}
+.AboutUs_h1{
+    font-family: 'Georgia', serif;
+    margin-left: 320px;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px #2062b9 ;
+
+}
+.AboutUs_h2 {
+    font-family:Apple Chancery, cursive;
+    margin-left: 320px;
+    font-size: 20px;
+
+}
+.AboutUs_left_image {
+    position:fixed;
+    transform: translate(20%, 10%);
+    width: 200px;
+    height: auto;
+    z-index: 1;
+    content: url('../utils/lap_about.jpg');
+    box-shadow: 1px 20px 50px #2062b9;
+    border-width: 2px;
+    border-color: #2062b9;
+    border-radius: 5px;
+
+}
+.AboutUs_right_image {
+    position: fixed;
+    transform: translate(30%, -20%);
+    margin-left: 1000px;
+    margin-bottom: 700px;
+    width: 400px;
+    height: auto;
+    z-index: 1;
+    content: url('../utils/app2jpg.jpg');
+    border-width: 2px;
+    border-color: #2062b9;
+    border-radius: 5px;
+
+}

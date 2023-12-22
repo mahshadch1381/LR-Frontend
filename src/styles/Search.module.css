@@ -1,6 +1,7 @@
+
 .container {
     margin: 30px;
-    color: #2062b9
+    color: #2062b9;
 }
 
 /* Style for form elements */
@@ -44,8 +45,8 @@
 .laptopcontainer {
     display: flex;
     overflow-y: auto; 
-    margin-left: 440px;
-    margin-right: 140px;
+    margin-left: 550px;
+    margin-right: 120px;
     margin-top: 150px;
     /* z-index: 100; */
   }

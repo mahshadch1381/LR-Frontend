@@ -1,6 +1,8 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import styles from './../styles/PanelProduct.module.css'
+import styles3 from "../styles/PanelproductRightside.module.css";
+import styles2 from "../styles/ProductcarcSidebar.module.css";
 //TODO API for taking information with id
 
 const laptop = {
@@ -19,22 +21,43 @@ const laptop = {
 const PanelProduct = () => {
     const { id } = useParams();
     return (
-        <div class={styles.card}>
-            <div class={styles.photo}>
-                <img src={laptop.image_url}></img>
-            </div>
-            <div class={styles.description}>
-                <h2>{laptop.brand}</h2>
-                <h4>CPU : {laptop.cpu}</h4>
-                <h4>RAM : {laptop.ram}</h4>
-                <h4>HDD : {laptop.hdd}</h4>
-                <h4>SSD : {laptop.ssd}</h4>
-                <h1>{laptop.price}</h1>
-                <a href={laptop.market_link} target='_blank'>
-                    <button class={styles.button}>Buy</button>
-                </a>
-            </div>
-        </div>
+         <>
+            <div className={styles3.panelProduct_right}>
+                <h1 className={styles3.panelProduct_rightfont}>laptop information</h1>
+                <div className={styles2.productCard_sidebar}>
+                    <Link to="/" className={styles2.productCard_sidebarLink}>
+                        Home
+                    </Link>
+
+                    <button className={styles2.productCard_button} /*onClick={moveToSearch}*/>
+                        Search for Laptop
+                    </button>
+                    <button className={styles2.productCard_button} /*onClick={moveToPanel}*/>
+                        Panel
+                    </button>
+                    <button className={styles2.productCard_button} /*onClick={moveTologout}*/>
+                        logout
+                    </button>
+                </div>
+
+               </div>
+             <div className={styles.card}>
+                 <div className={styles.photo}>
+                     <img src={laptop.image_url}></img>
+                 </div>
+                 <div className={styles.description}>
+                     <h2>{laptop.brand}</h2>
+                     <h4>CPU : {laptop.cpu}</h4>
+                     <h4>RAM : {laptop.ram}</h4>
+                     <h4>HDD : {laptop.hdd}</h4>
+                     <h4>SSD : {laptop.ssd}</h4>
+                     <h1>{laptop.price}</h1>
+                     <a href={laptop.market_link} target='_blank'>
+                         <button className={styles.card_button}>Visit/Buy</button>
+                     </a>
+                 </div>
+             </div>
+             </>
     );
 };
 

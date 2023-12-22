@@ -4,14 +4,14 @@
 
 body {
 
-    font-family: "Raleway";
+    font-family: "Raleway", serif;
 
     .card {
         box-sizing: border-box;
         width: 650px;
         position: absolute;
         background: white;
-        margin: 0 auto;
+        margin-left: 160px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -50,7 +50,7 @@ body {
             width: 55%;
             border-left: 2px solid #efefef;
 
-            h1 {
+            .h1 {
                 color: #515151;
                 font-weight: 300;
                 padding-top: 15px;
@@ -59,14 +59,14 @@ body {
                 font-weight: 300;
             }
 
-            h2 {
+            .h2 {
                 color: #515151;
                 margin: 0;
                 text-transform: uppercase;
                 font-weight: 500;
             }
 
-            h4 {
+            .h4 {
                 margin: 0;
                 color: #727272;
                 text-transform: uppercase;
@@ -74,7 +74,7 @@ body {
                 font-size: 12px
             }
 
-            p {
+            .p {
                 font-size: 12px;
                 line-height: 20px;
                 color: #727272;
@@ -82,9 +82,27 @@ body {
                 margin: 0;
             }
 
-            
         }
 
     }
-
+    .card_button{
+        width: 120px;
+        height: 45px;
+        padding-top: 9px;
+        margin-left: 1px;
+        margin-top: 30px;
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+        background-color: #2062b9;
+        border-style: solid;
+        border-width: 2px;
+        border-color: rgba(97, 97, 100, 0.5);
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Georgia', serif;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }

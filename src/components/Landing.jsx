@@ -9,7 +9,6 @@ const Landing = () => {
     }
     return (    
         <div className={styles.back} >
-
             <div className={styles.main2}>
                 <h1 >Welcome to our recommender laptop app</h1>
                 <h2 >Please login or signup first.</h2>
