@@ -45,9 +45,9 @@ const Profile = () => {
             })
     }
 
-    useEffect(() => {
-        getData();
-    }, []);
+    // useEffect(() => {
+    //     getData();
+    // }, []);
 
     return (
         <div className={styles.profile_right}>
@@ -76,7 +76,7 @@ const Profile = () => {
                         className={styles.profile_input}
                         type="password"
                         name="pswd"
-                        placeholder="Password"
+                        placeholder="New Password"
                         required=""
                         value={passwords}
                         onChange={(e) => setPasswords(e.target.value)}
