@@ -5,8 +5,8 @@ import Landing from "./components/Landing";
 import Panel from "./components/Panel";
 import Profile from "./components/Profile";
 import Search from "./components/Search";
-import Favorites from "./components/Favorites";
 import PanelProduct from "./components/PanelProduct";
+import Aboutus from "./components/Aboutus";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 
@@ -22,9 +22,10 @@ export default function App() {
         <Route path="/panel" element={<Panel />} />
         <Route path="/panel/:id" element={<PanelProduct />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/aboutus" element={<Aboutus />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<Navigate to="/" />} />
+
       </Routes>
     </BrowserRouter>
   );

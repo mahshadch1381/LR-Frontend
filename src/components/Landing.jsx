@@ -4,7 +4,10 @@ import styles2 from "../styles/Sidebar.module.css";
 import {Link} from "react-router-dom";
 
 const Landing = () => {
-    return (
+    const moveToAboutus = () => {
+        window.location.href = '/aboutus'
+    }
+    return (    
         <div className={styles.back} >
 
             <div className={styles.main2}>
@@ -30,10 +33,10 @@ const Landing = () => {
                     <button className={styles2.mybutton4} >
                         admin
                     </button>
-                    <button className={styles2.mybutton4} >
+                    <button className={styles2.mybutton4} onClick={moveToAboutus} >
                         About us
                     </button>
-                    <button className={styles2.mybutton4} >
+                    <button className={styles2.mybutton4} onClick={moveToAboutus} >
                         follow us
                     </button>
                     <img className={styles["left-image"]}  />
