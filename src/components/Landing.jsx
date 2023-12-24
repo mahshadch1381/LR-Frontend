@@ -4,6 +4,9 @@ import styles2 from "../styles/Sidebar.module.css";
 import {Link} from "react-router-dom";
 
 const Landing = () => {
+    const moveToAdminLogin = () => {
+        window.location.href = '/admin-login'
+    }
     const moveToAboutus = () => {
         window.location.href = '/aboutus'
     }
@@ -29,7 +32,7 @@ const Landing = () => {
                     <Link to="/" className={styles2.sidebarLink}>
                         Landing page
                     </Link>
-                    <button className={styles2.mybutton4} >
+                    <button onClick={moveToAdminLogin} className={styles2.mybutton4} >
                         admin
                     </button>
                     <button className={styles2.mybutton4} onClick={moveToAboutus} >

@@ -7,6 +7,8 @@ import Profile from "./components/Profile";
 import Search from "./components/Search";
 import PanelProduct from "./components/PanelProduct";
 import Aboutus from "./components/Aboutus";
+import AdminLogin from "./components/AdminLogin";
+import AdminPanel from "./components/AdminPanel";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 
@@ -24,8 +26,10 @@ export default function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/aboutus" element={<Aboutus />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/admin-panel" element={<AdminPanel />} />
         <Route path="*" element={<Navigate to="/" />} />
-
+        
       </Routes>
     </BrowserRouter>
   );
