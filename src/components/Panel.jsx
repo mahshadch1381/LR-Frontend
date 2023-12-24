@@ -131,16 +131,16 @@ const Panel = () => {
             })
     }
 
-    // useEffect(() => {
-    //     getuser();
-    //     getlaptop();
+    useEffect(() => {
+        getuser();
+        getlaptop();
 
-    // }, []);
+    }, []);
 
-    // useEffect(() => {
-    //     console.log(laptop);
-    //   }, []); // Log the laptops state whenever it changes
-    
+    useEffect(() => {
+        console.log(laptop);
+    }, []); // Log the laptops state whenever it changes
+
 
 
     return (
@@ -155,8 +155,8 @@ const Panel = () => {
                         Home
                     </Link>
 
-                    {/* <p className={styles2.p_style}>Welcome {user.Info.name}</p> */}
-                    <p className={styles2.p_style}>Welcome Amirreza Ahmadi</p>
+                    <p className={styles2.p_style}>Welcome {user.Info.name}</p>
+                    {/* <p className={styles2.p_style}>Welcome Amirreza Ahmadi</p> */}
 
                     <button className={styles2.mybutton4} onClick={moveToSearch}>
                         Search for Laptop
@@ -176,21 +176,21 @@ const Panel = () => {
             <div className={styles.container}>
                 <div className={styles.row}>
                     {
-                        // laptop.map(laptop => 
-                        laptops.map(laptop => 
-                        // console.log(laptop),
-                        <ProductCard 
-                            id = {laptop.id}
-                            cpu = {laptop.cpu}
-                            ram = {laptop.ram}
-                            ssd = {laptop.ssd}
-                            hdd = {laptop.hdd}
-                            graphic_card = {laptop.graphic_card}
-                            screen_size = {laptop.screen_size}
-                            company = {laptop.company}
-                            image_url = {laptop.image_url}
-                            redirect_url = {laptop.redirect_url}
-                            key = {laptop.id}
+                        laptop.map(laptop =>
+                            // laptops.map(laptop => 
+                            // console.log(laptop),
+                            <ProductCard
+                                id={laptop.id}
+                                cpu={laptop.cpu}
+                                ram={laptop.ram}
+                                ssd={laptop.ssd}
+                                hdd={laptop.hdd}
+                                graphic_card={laptop.graphic_card}
+                                screen_size={laptop.screen_size}
+                                company={laptop.company}
+                                image_url={laptop.image_url}
+                                redirect_url={laptop.redirect_url}
+                                key={laptop.id}
                             />)
                     }
                 </div>
