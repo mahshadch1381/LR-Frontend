@@ -11,11 +11,7 @@ import AdminLogin from "./components/AdminLogin";
 import AdminPanel from "./components/AdminPanel";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-
-
-
 export default function App() {
-
   return (
     <BrowserRouter>
       <Routes>
@@ -29,7 +25,6 @@ export default function App() {
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/admin-panel" element={<AdminPanel />} />
         <Route path="*" element={<Navigate to="/" />} />
-        
       </Routes>
     </BrowserRouter>
   );

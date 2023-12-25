@@ -24,9 +24,26 @@ const moveToPanel = () => {
 }
 
 const Profile = () => {
-    const [usenames, setusenames] = useState('');
-    const [passwords, setPasswords] = useState('');
-    const [phoneNumber, setPhones] = useState('');
+    const [profileState, setProfileState] = useState({
+        name: {
+            value: "",
+            error: ""
+        },
+        phone_number: {
+            value: "",
+            error: ""
+        },
+        password: {
+            value: "",
+            error: ""
+        }
+    });
+    // const [usenames, setusenames] = useState({
+    //     value: "",
+    //     error: ""
+    // });
+    // const [passwords, setPasswords] = useState('');
+    // const [phoneNumber, setPhones] = useState('');
     if (!localStorage.getItem('token')) {
         window.location.href = '/'
     }
@@ -46,77 +63,93 @@ const Profile = () => {
     }
 
     const handle_save = () => {
-        const changing_data ={
-            name: usenames,
-            phone_number: phoneNumber,
-            password: passwords
+        const changing_data = {
+            user_name: profileState.name.value,
+            phone_number: profileState.phone_number.value,
+            password: profileState.password.value
         }
-        axios.put("http://127.0.0.1:8088/users/1", changing_data, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        axios.put("http://127.0.0.1:8088/users/", changing_data, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(response => {
                 console.log(response);
+                console.log(changing_data)
+
                 // Handle the response
             })
             .catch(error => {
                 // Handle errors
+                console.log(changing_data)
+
                 console.log(error);
             });
-        }
-        useEffect(() => {
-            getData();
-        }, []);
+    }
+    useEffect(() => {
+        getData();
+    }, []);
+    const onChangeInput = (e) => {
+        const { name, value } = e.target;
 
-        return (
-            <div className={styles.profile_right}>
-                <h1 className={styles.profile_right_font}>Here is the user's Profile</h1>
-                <div className={styles.profile_formContainer}>
-                    <form>
-                        <input
-                            className={styles.profile_input}
-                            type="text"
-                            name="txt"
-                            placeholder={data.Info.name}
-                            required=""
-                            value={usenames}
-                            onChange={(e) => setusenames(e.target.value)}
-                        />
-                        <input
-                            className={styles.profile_input}
-                            type="tel"
-                            name="phoneNumber"
-                            placeholder={data.Info.phone_number}
-                            required=""
-                            value={phoneNumber}
-                            onChange={(e) => setPhones(e.target.value)}
-                        />
-                        <input
-                            className={styles.profile_input}
-                            type="password"
-                            name="pswd"
-                            placeholder="New Password"
-                            required=""
-                            value={passwords}
-                            onChange={(e) => setPasswords(e.target.value)}
-                        />
-                        <button onClick={handle_save} className={styles.profile_button} type="button">Save</button>
-                    </form>
-                </div>
-                <div className={styles2.profile_sidebar}>
-                    <Link to="/" className={styles2.profile_sidebarLink}>
-                        Home
-                    </Link>
-                    <button className={styles2.profile_sidebar_button} onClick={moveToSearch}>
-                        Search for Laptop
-                    </button>
-                    <button className={styles2.profile_sidebar_button} onClick={moveToPanel}>
-                        Panel
-                    </button>
-                    <button className={styles2.profile_sidebar_button} onClick={logout}>
-                        Logout
-                    </button>
-                </div>
+        setProfileState(prev => ({
+            ...prev,
+            [name]: {
+                error:"",
+                value
+            }
+        }))
+    }
+    return (
+        <div className={styles.profile_right}>
+            <h1 className={styles.profile_right_font}>Here is the user's Profile</h1>
+            <div className={styles.profile_formContainer}>
+                <form>
+                    <input
+                        className={styles.profile_input}
+                        type="text"
+                        name="name"
+                        placeholder={data.Info.name}
+                        required=""
+                        value={profileState.name.value}
+                        onChange={onChangeInput}
+                    />
+
+
+                    <input
+                        className={styles.profile_input}
+                        type="tel"
+                        name="phone_number"
+                        placeholder={data.Info.phone_number}
+                        required=""
+                        value={profileState.phone_number.value}
+                        onChange={onChangeInput}
+                    />
+                    <input
+                        className={styles.profile_input}
+                        type="password"
+                        name="password"
+                        placeholder="New Password"
+                        required=""
+                        value={profileState.password.value}
+                        onChange={onChangeInput}
+                    />
+                    <button onClick={handle_save} className={styles.profile_button} type="button">Save</button>
+                </form>
             </div>
-        );
-    };
+            <div className={styles2.profile_sidebar}>
+                <Link to="/" className={styles2.profile_sidebarLink}>
+                    Home
+                </Link>
+                <button className={styles2.profile_sidebar_button} onClick={moveToSearch}>
+                    Search for Laptop
+                </button>
+                <button className={styles2.profile_sidebar_button} onClick={moveToPanel}>
+                    Panel
+                </button>
+                <button className={styles2.profile_sidebar_button} onClick={logout}>
+                    Logout
+                </button>
+            </div>
+        </div>
+    );
+};
 
 
-    export default Profile;
+export default Profile;

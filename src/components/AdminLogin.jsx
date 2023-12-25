@@ -12,7 +12,7 @@ const AdminLogin = () => {
         })
             .then(function (response) {
                 localStorage.setItem('token', response.data.token.access_token)
-                window.location.href = '/panel'
+                window.location.href = '/admin-panel'
 
             })
             .catch(function (error) {

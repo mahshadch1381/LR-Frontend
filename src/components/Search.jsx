@@ -4,6 +4,7 @@ import styles from "./../styles/Search.module.css";
 import styles2 from "./../styles/Searchsidebar.module.css";
 import styles3 from "./../styles/SearchRightSide.module.css";
 import { useState } from "react";
+import axios from 'axios';
 
 
 const laptops = [
@@ -77,27 +78,56 @@ const moveToPanel = () => {
     window.location.href = '/panel'
 }
 
-const handleSearch = () => {
-    //TODO API for finding best laptops
-}
 
 const Search = () => {
-    const [cpu, setcpu] = useState('');
-    const [ram, setram] = useState('');
-    const [ssd, setssd] = useState('');
-    const [hdd, sethdd] = useState('');
-    const [graphic, setgraphic] = useState('');
-    const [scereen, setscereen] = useState('');
-    const [company, setcompany] = useState('');
+
+    const [laptop, setlaptop] = useState([]);
+
+
+    const [cpu, setcpu] = useState('i3');
+    const [ram, setram] = useState(4);
+    const [ssd, setssd] = useState(128);
+    const [hdd, sethdd] = useState(128);
+    const [graphic, setgraphic] = useState(4);
+    const [scereen, setscereen] = useState('13');
+    const [company, setcompany] = useState('hp');
+
+
     if (!localStorage.getItem('token')) {
         window.location.href = '/'
     }
+
+
+    const searchlaptop = () => {
+        const searchinfo = {
+            laptop: {
+                cpu: cpu,
+                ram: parseInt(ram),
+                ssd: parseInt(ssd),
+                hdd: parseInt(hdd),
+                graphic_card: parseInt(graphic),
+                screen_size: scereen,
+                company: company
+            }
+        }
+        axios.post("http://127.0.0.1:8088/users/laptops/search", searchinfo, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+            .then(res => {
+                setlaptop(res.data.laptop)
+            }
+            )
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
+
+
     return (
         <>
             <div className={styles.laptopcontainer}>
                 <div className={styles.row}>
                     {
-                        laptops.map(laptop =>
+                        laptop.map(laptop =>
                             // console.log(laptop),
                             <ProductCard
                                 id={laptop.id}
@@ -111,6 +141,7 @@ const Search = () => {
                                 image_url={laptop.image_url}
                                 redirect_url={laptop.redirect_url}
                                 key={laptop.id}
+                                price={laptop.price}
                             />)
                     }
                 </div>
@@ -181,7 +212,7 @@ const Search = () => {
                                 <option value="apple">APPLE</option>
                             </select>
                             <div className={styles2.search_button3}>
-                                <div><button className={styles2.mybutton6} type="button" onClick={handleSearch} >Search</button></div>
+                                <div><button className={styles2.mybutton6} type="button" onClick={searchlaptop} >Search</button></div>
                                 <div><button className={styles2.mybutton6} onClick={moveToPanel} type="button" >Panel</button></div>
                             </div>
 
