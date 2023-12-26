@@ -16,7 +16,7 @@ const AdminPanel = () => {
     const [laptop, setlaptop] = useState([]);
 
     const getlaptop = () => {
-        axios.get("http://127.0.0.1:8088/backoffice/laptops/", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        axios.get("http://192.168.96.127:8088/backoffice/laptops/", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(res => {
                 setlaptop(res.data.data.laptops)
             }
@@ -58,19 +58,26 @@ const AdminPanel = () => {
                         Logout
                     </button>
                 </div>
-                <div style={{ width: '500px', height: '550px', overflowY: 'auto', marginLeft: '350px' }}>
+                <div style={{ width: '300px', height: '550px', overflowY: 'auto', marginLeft: '390px' }}>
                     <ul style={{ listStyle: 'none', padding: '0', }}>
                         {laptop &&
                             laptop.map(
-                                laptop => 
-                                    
-                                    <li key={laptop.ID} style={{ padding: '8px', borderBottom: '1px solid #eee' }}>
-                                        <img style={{height: '100px'}}  src={laptop.ImageURL} alt="" />,
-                                        {laptop.ID}, 
-                                        {laptop.CPU},
-                                        {laptop.RAM},
-                                        {laptop.SSD},
-                                        <button onClick={() => handle_remove(laptop.ID)}>delete</button>
+                                laptop =>
+                                    <li key={laptop.ID} style={{ padding: '6px', border: '10px solid #eee'}}>
+                                        <p className={styles.text_admin_postcard}>
+                                           id: {laptop.ID},
+                                            <br/>
+                                           cpu: {laptop.CPU},
+                                            <br/>
+                                            RAM: {laptop.RAM},
+                                            <br/>
+                                            SSD: {laptop.SSD},
+                                            <br/>
+                                            Company:{laptop.Company}
+                                            <br/>
+                                            graphic_card:{laptop.graphic}
+                                            </p>
+                                        <button className={styles.button_delete_admin_panel} onClick={() => handle_remove(laptop.ID)}>delete</button>
                                     </li>
                             )
                         }

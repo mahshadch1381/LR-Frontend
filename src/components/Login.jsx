@@ -7,9 +7,11 @@ const Login = () => {
     const [usenames, setusenames] = useState('');
     const [passwords, setPasswords] = useState('');
     const [phoneNumber, setPhones] = useState('');
+    const [showSuccess, setShowSuccess] = useState(false)
+    const [showEroor, setShowError] = useState(false)
     const handleLogin_log = () => {
 
-        axios.post('http://localhost:8088/users/login', {
+        axios.post('http://192.168.96.127:8088/users/login', {
             phone_number: usename,
             password: password,
         })
@@ -23,16 +25,20 @@ const Login = () => {
             });
     };
     const handleLogin_sign = () => {
-
-        axios.post('http://localhost:8088/users/register', {
+        setShowError(false);
+        axios.post('http://192.168.96.127:8088/users/register', {
             phone_number: phoneNumber,
             name: usenames,
             password: passwords,
         })
             .then(function (response) {
                 console.log(response);
+                setShowSuccess(true)
+                setShowError(false)
             })
             .catch(function (error) {
+                setShowError(true)
+                setShowSuccess(false)
                 console.log(error);
             });
     };
@@ -46,6 +52,8 @@ const Login = () => {
                         <input className="myinput" type="text" name="txt" placeholder="User name" required="" value={usenames} onChange={(e) => setusenames(e.target.value)} />
                         <input className="myinput" type="phoneNumber" name="phoneNumber" placeholder="phoneNumber" required="" value={phoneNumber} onChange={(e) => setPhones(e.target.value)} />
                         <input className="myinput" type="password" name="pswd" placeholder="Password" required="" value={passwords} onChange={(e) => setPasswords(e.target.value)} />
+                        {showSuccess && <p style={{ marginLeft: '100px',fontSize:'20px',color:'rgba(48,227,79,0.5)',marginBottom:'3px',fontWeight:'bold'}}> successfully sign up </p>}
+                        {showEroor && <p style={{ marginLeft: '110px',fontSize:'20px',color:'rgba(253,23,2,0.5)',marginBottom:'3px',fontWeight:'bold'}}>Error in signing up</p>}
                         <button  className="mybutton" type="button" onClick={handleLogin_sign}>Sign up</button>
                     </form>
                 </div>
