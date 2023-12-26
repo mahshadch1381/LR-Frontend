@@ -4,11 +4,16 @@ import styles2 from "../styles/Sidebar.module.css";
 import {Link} from "react-router-dom";
 
 const Landing = () => {
-    return (
+    const moveToAdminLogin = () => {
+        window.location.href = '/admin-login'
+    }
+    const moveToAboutus = () => {
+        window.location.href = '/aboutus'
+    }
+    return (    
         <div className={styles.back} >
-
             <div className={styles.main2}>
-                <h1 >Welcome to the our recommender laptop app</h1>
+                <h1 >Welcome to our recommender laptop app</h1>
                 <h2 >Please login or signup first.</h2>
                 <div className={styles.button3}>
                     <div >
@@ -27,13 +32,13 @@ const Landing = () => {
                     <Link to="/" className={styles2.sidebarLink}>
                         Landing page
                     </Link>
-                    <button className={styles2.mybutton4} >
+                    <button onClick={moveToAdminLogin} className={styles2.mybutton4} >
                         admin
                     </button>
-                    <button className={styles2.mybutton4} >
+                    <button className={styles2.mybutton4} onClick={moveToAboutus} >
                         About us
                     </button>
-                    <button className={styles2.mybutton4} >
+                    <button className={styles2.mybutton4} onClick={moveToAboutus} >
                         follow us
                     </button>
                     <img className={styles["left-image"]}  />

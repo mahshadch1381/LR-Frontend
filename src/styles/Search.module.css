@@ -1,6 +1,7 @@
+
 .container {
     margin: 30px;
-    color: #2062b9
+    color: #2062b9;
 }
 
 /* Style for form elements */
@@ -41,3 +42,16 @@
     background-color:  #2062b9;
 }
 
+.laptopcontainer {
+    display: flex;
+    overflow-y: auto; 
+    margin-left: 550px;
+    margin-right: 120px;
+    margin-top: 150px;
+    /* z-index: 100; */
+  }
+  
+  .row {
+    display: flex;
+    gap: 30px; 
+  }

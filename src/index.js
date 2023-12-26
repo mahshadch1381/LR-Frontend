@@ -5,15 +5,13 @@ import Landing from "./components/Landing";
 import Panel from "./components/Panel";
 import Profile from "./components/Profile";
 import Search from "./components/Search";
-import Favorites from "./components/Favorites";
 import PanelProduct from "./components/PanelProduct";
+import Aboutus from "./components/Aboutus";
+import AdminLogin from "./components/AdminLogin";
+import AdminPanel from "./components/AdminPanel";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-
-
-
 export default function App() {
-
   return (
     <BrowserRouter>
       <Routes>
@@ -22,8 +20,10 @@ export default function App() {
         <Route path="/panel" element={<Panel />} />
         <Route path="/panel/:id" element={<PanelProduct />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/aboutus" element={<Aboutus />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/admin-panel" element={<AdminPanel />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>

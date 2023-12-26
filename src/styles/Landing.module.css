@@ -23,13 +23,14 @@
     margin-left: -120px;
     color: #eeeeee;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    font-family: 'Georgia', serif;
 }
 .main2 h2{
     text-align: center;
     margin-top: 80px;
     font-size: 30px;
     margin-left: -120px;
-
+    font-family: 'Georgia', serif;
 }
 .main2 button {
     height: 70px;

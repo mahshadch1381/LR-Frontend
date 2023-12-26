@@ -33,3 +33,18 @@
     cursor: pointer;
 }
 
+
+.container {
+    display: flex;
+    overflow-y: auto; 
+    margin-left: 440px;
+    margin-right: 140px;
+    margin-top: 150px;
+    /* z-index: 100; */
+  }
+  
+  .row {
+    /* z-index: 100; */
+    display: flex;
+    gap: 30px; 
+  }
