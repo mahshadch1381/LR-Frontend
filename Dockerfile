@@ -2,7 +2,7 @@ From nginx
 
 WORKDIR /usr/share/react
 
-RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install -y nodejs
 
 COPY package*.json ./
