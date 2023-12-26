@@ -1,21 +1,23 @@
-From nginx
+# Use a base image with Node.js and npm
+FROM node:20-alpine
 
-WORKDIR /usr/share/react
+# Set the working directory inside the container
+WORKDIR /app
 
-RUN curl -SLO https://deb.nodesource.com/nsolid_setup_deb.sh
-RUN chmod 500 nsolid_setup_deb.sh
-RUN ./nsolid_setup_deb.sh 21
-RUN apt-get install -y nodejs
-
+# Copy package.json and package-lock.json (if available)
 COPY package*.json ./
 
+# Install dependencies
 RUN npm install
 
+# Copy the application source code into the container
 COPY . .
 
+# Build the React application
 RUN npm run build
 
-RUN rm -r /usr/share/nginx/html/*
+# Expose the port the application will run on
+EXPOSE 3000
 
-RUN cp -a build/. /usr/share/nginx/html
-
+# Set the default command to start the application
+CMD ["npm", "start"]
