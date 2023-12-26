@@ -6,7 +6,7 @@ const AdminLogin = () => {
     const [password, setadminPassword] = useState('');
     const handleLogin_log = () => {
 
-        axios.post('http://192.168.96.127:8088/users/login', {
+        axios.post('http://127.0.0.1:8088/users/login', {
             phone_number: usename,
             password: password,
         })

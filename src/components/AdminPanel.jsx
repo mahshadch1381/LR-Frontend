@@ -16,7 +16,7 @@ const AdminPanel = () => {
     const [laptop, setlaptop] = useState([]);
 
     const getlaptop = () => {
-        axios.get("http://192.168.96.127:8088/backoffice/laptops/", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        axios.get("http://127.0.0.1:8088/backoffice/laptops/", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(res => {
                 setlaptop(res.data.data.laptops)
             }

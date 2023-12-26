@@ -106,7 +106,7 @@ const Panel = () => {
 
 
     const getuser = () => {
-        axios.get("http://192.168.96.127:8088/users/profile", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        axios.get("http://127.0.0.1:8088/users/profile", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(res => {
                 setuser(res.data)
                 // console.log(res.data)
@@ -119,7 +119,7 @@ const Panel = () => {
     }
 
     const getlaptop = async () => {
-        await axios.get("http://192.168.96.127:8088/users/laptops/favorites", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        await axios.get("http://127.0.0.1:8088/users/laptops/favorites", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(res => {
                 setlaptop(res.data.laptops)
                 // console.log(res.data.laptops)

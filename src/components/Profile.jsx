@@ -53,7 +53,7 @@ const Profile = () => {
     const [showSuccess, setShowSuccess] = useState(false)
     const [showEroor, setShowError] = useState(false)
     const getData = () => {
-        axios.get("http://192.168.96.127:8088/users/profile", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        axios.get("http://127.0.0.1:8088/users/profile", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(res => {
                 setData(res.data)
             }
@@ -71,7 +71,7 @@ const Profile = () => {
             phone_number: profileState.phone_number.value,
             password: profileState.password.value
         }
-        axios.put("http://192.168.96.127:8088/users/", changing_data, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        axios.put("http://127.0.0.1:8088/users/", changing_data, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(response => {
                 console.log(response);
                 console.log(changing_data)
@@ -133,8 +133,8 @@ const Profile = () => {
                         value={profileState.password.value}
                         onChange={onChangeInput}
                     />
-                    {showSuccess && <p style={{ marginLeft: '-65px',fontSize:'20px',color:'rgba(48,227,79,0.5)',marginBottom:'3px',fontWeight:'bold'}}> successfully sign up </p>}
-                    {showEroor && <p style={{ marginLeft: '-53px',fontSize:'20px',color:'rgba(253,23,2,0.5)',marginBottom:'3px',fontWeight:'bold'}}>Error in signing up</p>}
+                    {showSuccess && <p style={{ marginLeft: '-65px',fontSize:'20px',color:'rgba(48,227,79,0.5)',marginBottom:'3px',fontWeight:'bold'}}> successfully Saved</p>}
+                    {showEroor && <p style={{ marginLeft: '-53px',fontSize:'20px',color:'rgba(253,23,2,0.5)',marginBottom:'3px',fontWeight:'bold'}}>Saving Error</p>}
                     <button onClick={handle_save} className={styles.profile_button} type="button">Save</button>
                 </form>
             </div>
