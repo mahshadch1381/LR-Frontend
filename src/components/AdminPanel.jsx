@@ -16,7 +16,7 @@ const AdminPanel = () => {
     const [laptop, setlaptop] = useState([]);
 
     const getlaptop = () => {
-        axios.get("http://127.0.0.1:8088/backoffice/laptops/", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        axios.get("http://5.34.200.127:8088/backoffice/laptops/", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(res => {
                 setlaptop(res.data.data.laptops)
             }
@@ -27,7 +27,7 @@ const AdminPanel = () => {
     }
 
     const handle_remove = (laptopid) => {
-        axios.delete(`http://127.0.0.1:8088/backoffice/laptops/${laptopid}`, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        axios.delete(`http://5.34.200.127:8088/backoffice/laptops/${laptopid}`, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(res => {
                 console.log(res);
             }

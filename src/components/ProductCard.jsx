@@ -13,10 +13,10 @@ const ProductCard = (props) => {
     }
 
     if (fav) {
-      axios.delete(`http://127.0.0.1:8088/users/laptops/favorites/${id}`, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }, data: body })
+      axios.delete(`http://5.34.200.127:8088/users/laptops/favorites/${id}`, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }, data: body })
      }
     else {
-      axios.post("http://127.0.0.1:8088/users/laptops/favorites", body, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+      axios.post("http://5.34.200.127:8088/users/laptops/favorites", body, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
     }
     setfav(!fav)
 

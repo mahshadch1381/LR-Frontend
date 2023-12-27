@@ -53,7 +53,7 @@ const Profile = () => {
     const [showSuccess, setShowSuccess] = useState(false)
     const [showEroor, setShowError] = useState(false)
     const getData = () => {
-        axios.get("http://127.0.0.1:8088/users/profile", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        axios.get("http://5.34.200.127:8088/users/profile", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(res => {
                 setData(res.data)
             }
@@ -71,7 +71,7 @@ const Profile = () => {
             phone_number: profileState.phone_number.value,
             password: profileState.password.value
         }
-        axios.put("http://127.0.0.1:8088/users/", changing_data, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        axios.put("http://5.34.200.127:8088/users/", changing_data, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(response => {
                 console.log(response);
                 console.log(changing_data)
