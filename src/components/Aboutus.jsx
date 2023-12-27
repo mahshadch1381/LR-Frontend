@@ -9,6 +9,10 @@ const Aboutus = () => {
         window.location.href = '/'
     }
 
+    const moveToAdmin = () => {
+        window.location.href = '/admin-login'
+    }
+
     return (
         <>
             <div>
@@ -18,7 +22,7 @@ const Aboutus = () => {
                         Home
                     </Link>
 
-                    <button className={styles.AboutUs_button} >
+                    <button onClick={moveToAdmin} className={styles.AboutUs_button} >
                         admin
                     </button>
                     <button onClick={moveToLanding} className={styles.AboutUs_button} >

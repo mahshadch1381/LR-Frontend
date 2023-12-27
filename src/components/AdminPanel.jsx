@@ -75,7 +75,7 @@ const AdminPanel = () => {
                                             <br/>
                                             Company:{laptop.Company}
                                             <br/>
-                                            graphic_card:{laptop.graphic}
+                                            graphic_card:{laptop.Graphic}
                                             </p>
                                         <button className={styles.button_delete_admin_panel} onClick={() => handle_remove(laptop.ID)}>delete</button>
                                     </li>

@@ -7,7 +7,18 @@ import axios from 'axios';
 //TODO API for taking information with id
 
 
+const moveToPanel = () => {
+    window.location.href = "/panel"
+}
 
+const moveToSearch = () => {
+    window.location.href = "/search"
+}
+
+const handle_logout = () => {
+    localStorage.removeItem('token')
+    window.location.href = '/'
+}
 
 const PanelProduct = () => {
 
@@ -41,13 +52,13 @@ const PanelProduct = () => {
                         Home
                     </Link>
 
-                    <button className={styles2.productCard_button} /*onClick={moveToSearch}*/>
+                    <button onClick={moveToSearch} className={styles2.productCard_button} /*onClick={moveToSearch}*/>
                         Search for Laptop
                     </button>
-                    <button className={styles2.productCard_button} /*onClick={moveToPanel}*/>
+                    <button onClick={moveToPanel} className={styles2.productCard_button} /*onClick={moveToPanel}*/>
                         Panel
                     </button>
-                    <button className={styles2.productCard_button} /*onClick={moveTologout}*/>
+                    <button onClick={handle_logout} className={styles2.productCard_button} /*onClick={moveTologout}*/>
                         logout
                     </button>
                 </div>
