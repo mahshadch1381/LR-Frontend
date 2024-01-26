@@ -27,7 +27,7 @@ const PanelProduct = () => {
     const { id } = useParams();
 
     const get_laptop = () => {
-        axios.get(`http://5.34.200.127:8088/users/laptop/${id}`,  { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        axios.get(`http://127.0.0.1:8088/users/laptop/${id}`,  { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(res => {
                 setlaptop(res.data.laptop)
 

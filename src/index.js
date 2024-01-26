@@ -9,6 +9,10 @@ import PanelProduct from "./components/PanelProduct";
 import Aboutus from "./components/Aboutus";
 import AdminLogin from "./components/AdminLogin";
 import AdminPanel from "./components/AdminPanel";
+import Seller from "./components/Seller";
+import SellerProfile from "./components/SellerProfile"; 
+import SellerLogin from "./components/SellerLogin";
+import SellerProduct from "./components/SellerProduct";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 export default function App() {
@@ -18,6 +22,10 @@ export default function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/panel" element={<Panel />} />
+        <Route path="/seller" element={<Seller />} />
+        <Route path="/seller-product" element={<SellerProduct />} />
+        <Route path="/seller-login" element={<SellerLogin />} />
+        <Route path="/seller-profile" element={<SellerProfile />} />
         <Route path="/panel/:id" element={<PanelProduct />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/aboutus" element={<Aboutus />} />

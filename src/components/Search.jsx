@@ -110,7 +110,7 @@ const Search = () => {
                 company: company
             }
         }
-        axios.post("http://5.34.200.127:8088/users/laptops/search", searchinfo, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        axios.post("http://127.0.0.1:8088/users/laptops/search", searchinfo, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(res => {
                 setlaptop(res.data)
             }
