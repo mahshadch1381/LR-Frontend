@@ -56,6 +56,7 @@ const SellerEdit = () => {
 
     return (
         <><div>
+            <h1 className={styles4.h1_tag}>Change or Remove what you want</h1>
             <div className={styles2.profile_sidebar}>
                 <Link to="/" className={styles2.profile_sidebarLink}>
                     Home
@@ -73,9 +74,6 @@ const SellerEdit = () => {
         </div>
 
             <div className={styles.my_container3}>
-                <div className={styles4.profile_right}>
-                    <h1 className={styles4.profile_right_font}>Change or Remove what you want</h1>
-                </div>
                 <form >
                     {/* <input type="text" name="txt" placeholder="cpu" required="" value={cpu} onChange={(e) => setcpu(e.target.value)} /> */}
                     <label>CPU</label>
@@ -142,6 +140,9 @@ const SellerEdit = () => {
 
                 </form>
             </div>
+
+
+
         </>
 
     );
