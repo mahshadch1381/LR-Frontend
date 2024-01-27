@@ -23,21 +23,17 @@ const ProductCard = (props) => {
 
   return (
     <div className={styles.productcard}>
-
-      <a href={"/seller-edit/" + id}  >
         <img className={styles.productcardimage} src={image_url} />
         <p className={styles.productcardbrand}>{company}</p>
         <p className={styles.productcardprice}>{price}$</p>
-        <p className={styles.productcardcpu}>cpu : {cpu}</p>
-        <p className={styles.productcardram}>ram : {ram}</p>
-        <p className={styles.productcardssd}>ssd : {ssd}</p>
-        <p className={styles.productcardhdd}>hdd : {hdd}</p>
-        <p className={styles.productcardgraphic_card}>graphic card : {graphic_card}</p>
-        <p className={styles.productcardscreen_size}>screen size : {screen_size}</p>
-      </a>
-
-      <button onClick={handle_edit}>
-        edite
+        <p >cpu : {cpu}</p>
+        <p >ram : {ram}</p>
+        <p >ssd : {ssd}</p>
+        <p >hdd : {hdd}</p>
+        <p >graphic card : {graphic_card}</p>
+        <p >screen size : {screen_size}</p>
+      <button className={styles.buttomn_sellercard} onClick={handle_edit}>
+        edit
       </button>
     </div>
   );
