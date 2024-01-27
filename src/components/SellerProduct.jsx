@@ -35,7 +35,6 @@ const SellerProduct = () => {
         };
     }, []);
 
-    const [laptop, setlaptop] = useState([]);
     const [cpu, setcpu] = useState('i3');
     const [ram, setram] = useState(4);
     const [ssd, setssd] = useState(128);
@@ -43,22 +42,24 @@ const SellerProduct = () => {
     const [graphic, setgraphic] = useState(4);
     const [scereen, setscereen] = useState('13');
     const [company, setcompany] = useState('hp');
+    const [filePath, setFilePath] = useState('')
+    const [price, setprice] = useState("2000")
 
     const addlaptop = () => {
         const searchinfo = {
-            laptop: {
                 cpu: cpu,
                 ram: parseInt(ram),
                 ssd: parseInt(ssd),
                 hdd: parseInt(hdd),
                 graphic_card: parseInt(graphic),
                 screen_size: scereen,
-                company: company
-            }
+                company: company,
+                price: price,
+                image_url: filePath,
         };
-        axios.post("http://127.0.0.1:8088/users/laptops/search", searchinfo, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        axios.post("http://127.0.0.1:8088/sellers/laptops/", searchinfo, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(res => {
-                setlaptop(res.data);
+                console.log(res)
             })
             .catch(err => {
                 console.log(err);
@@ -82,14 +83,33 @@ const SellerProduct = () => {
         }
       };
 
-    const handleUpload = () => {
-        // Add logic to handle file upload
-        if (selectedFile) {
-            
-        } else {
-            console.error('No file selected');
+      const uploadImage = async () => {
+        try {
+          const formData = new FormData();
+          const binaryData = atob(selectedFile.split(',')[1]); // Extracting base64 data
+          const arrayBuffer = new ArrayBuffer(binaryData.length);
+          const uint8Array = new Uint8Array(arrayBuffer);
+          for (let i = 0; i < binaryData.length; i++) {
+            uint8Array[i] = binaryData.charCodeAt(i);
+          }
+          const blob = new Blob([arrayBuffer], { type: 'image/jpeg' }); // Assuming JPEG format, you can adjust the type accordingly
+          formData.append('image', blob, 'image.jpg'); // 'image.jpg' is the filename
+          // Now you can send this formData object with axios
+          const response = await axios.post('http://127.0.0.1:8088/sellers/upload/', formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          });
+          setFilePath(response.data.filepath)
+          console.log('Upload successful: ', response.data);
+          // Handle success response
+        } catch (error) {
+          console.error('Error uploading image: ', error);
+          // Handle error
         }
-    };
+      };
+      
+      
 
     return (
         <>
@@ -103,7 +123,7 @@ const SellerProduct = () => {
                         <form >
                             <div>
                                 <input className={styles.uploadfile_choose} type="file" onChange={handleFileChange} />
-                                <button className={styles.upload_upload} type="button" onClick={handleUpload}>Upload</button>
+                                <button className={styles.upload_upload} type="button" onClick={uploadImage}>Upload</button>
                             </div>
                             {/* <input type="text" name="txt" placeholder="cpu" required="" value={cpu} onChange={(e) => setcpu(e.target.value)} /> */}
                             <label>CPU</label>

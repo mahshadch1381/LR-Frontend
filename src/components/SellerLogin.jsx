@@ -19,8 +19,7 @@ import styles from "../styles/Login.module.css";
             })
                 .then(function (response) {
                     localStorage.setItem('token', response.data.token.access_token)
-                    window.location.href = '/panel'
-
+                    window.location.href = '/seller'
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -32,6 +31,7 @@ import styles from "../styles/Login.module.css";
                 phone_number: phoneNumber,
                 name: Sellerusenames,
                 password: passwords,
+                role: 3
             })
                 .then(function (response) {
                     console.log(response);

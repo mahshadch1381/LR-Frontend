@@ -30,6 +30,7 @@ const Login = () => {
             phone_number: phoneNumber,
             name: usenames,
             password: passwords,
+            role: 1
         })
             .then(function (response) {
                 console.log(response);

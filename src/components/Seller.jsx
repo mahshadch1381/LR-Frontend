@@ -123,7 +123,7 @@ const Seller = () => {
     }
 
     const getlaptop = async () => {
-        await axios.get("http://127.0.0.1:8088/users/laptops/favorites", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        await axios.get("http://127.0.0.1:8088/sellers/laptops/", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(res => {
                     setlaptop(res.data.laptops)
                     // console.log(res.data.laptops)
