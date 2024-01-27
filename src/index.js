@@ -13,6 +13,8 @@ import Seller from "./components/Seller";
 import SellerProfile from "./components/SellerProfile"; 
 import SellerLogin from "./components/SellerLogin";
 import SellerProduct from "./components/SellerProduct";
+import ProductCard from "./components/SellerCard";
+import SellerEdit from "./components/SellerEdit";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 export default function App() {
@@ -20,10 +22,12 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/card" element={<ProductCard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/panel" element={<Panel />} />
         <Route path="/seller" element={<Seller />} />
         <Route path="/seller-product" element={<SellerProduct />} />
+        <Route path="/seller-edit/:id" element={< SellerEdit />} />
         <Route path="/seller-login" element={<SellerLogin />} />
         <Route path="/seller-profile" element={<SellerProfile />} />
         <Route path="/panel/:id" element={<PanelProduct />} />
