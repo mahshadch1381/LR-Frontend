@@ -39,6 +39,7 @@
     transition: .2s ease-in;
     margin-bottom: 30px;
     cursor: pointer;
+    font-family: 'Georgia', serif;
 }
 
 .profile_sidebar_button:hover {

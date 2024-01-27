@@ -15,9 +15,6 @@ const moveToPanel = () => {
     window.location.href = '/panel'
 }
 
-
-
-
 const SellerProduct = () => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     const [selectedFile, setSelectedFile] = useState(null);

@@ -82,7 +82,7 @@
         font-weight: bold;
         cursor: pointer;
         transition: .5s ease-in-out;
-    
+
 }
 
 
@@ -97,7 +97,7 @@
 }
 
 .login label {
-    
+
         color: #fff;
         font-size: 2.3em;
         justify-content: center;
@@ -106,7 +106,7 @@
         font-weight: bold;
         cursor: pointer;
         transition: .5s ease-in-out;
-    
+
     color: #1b1b1c;
     transform: scale(1);
 
