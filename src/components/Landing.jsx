@@ -22,7 +22,7 @@ const Landing = () => {
                         </a>
                     </div>
                     <div >
-                        <a  href="/follow_us">
+                        <a  href="/seller-login">
                             <button >Seller login</button>
                         </a>
                     </div>
