@@ -13,15 +13,30 @@ const logout = () => {
     window.location.href = '/'
 }
 
-const moveToProfile = () => {
-    window.location.href = '/profile'
+const moveToProfile = () => {  //chnge
+    window.location.href = '/seller-profile'
 }
 
-const moveToSearch = () => {
-    window.location.href = '/search'
+const moveToadd = () => {  // change
+    window.location.href = '/seller-product'
 }
 
 const Seller = () => {
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
     const [user, setuser] = useState({ Info: [] });
     const [laptop, setlaptop] = useState([]);
 
@@ -65,14 +80,14 @@ const Seller = () => {
         console.log(laptop);
     }, []); // Log the laptops state whenever it changes
 
-
+    const screenfalg = screenWidth < 1000;
 
     return (
 
         <>
             <div className={styles3.panel_right}>
 
-                <h1 className={styles3.panel_rightfont}>Your favorite laptops</h1>
+                <h1 className={styles3.panel_rightfont}>Your added laptops</h1>
 
                 <div className={styles2.sidebar}>
                     <Link to="/" className={styles2.sidebarLink}>
@@ -82,28 +97,29 @@ const Seller = () => {
                     <p className={styles2.p_style}>Welcome {user.Info.name}</p>
                     {/* <p className={styles2.p_style}>Welcome Amirreza Ahmadi</p> */}
 
-                    <button className={styles2.mybutton4} onClick={moveToSearch}>
-                        Search for Laptop
+                    <button className={styles2.mybutton4} onClick={moveToadd}>
+                        Add Laptop
                     </button>
                     <button className={styles2.mybutton4} onClick={moveToProfile}>
-                        Profile
+                        seller Profile
                     </button>
                     <button className={styles2.mybutton4} onClick={logout}>
-                        Logout
+                        seller Logout
                     </button>
 
                 </div>
 
             </div>
 
-            <div className={styles.container}>
-                <div className={styles.row}>
+            <div className={styles.list_liked}>
+            <div className={screenfalg? styles.container1 : styles.container2}>
+                <div className={screenfalg? styles.row1 : styles.row2}>
                     {laptop &&
 
                         laptop.map(
 
                             laptop =>
-                                // laptops.map(laptop =>
+                                // laptops.map(laptop => 
                                 // console.log(laptop),
                                 <ProductCard
                                     id={laptop.id}
@@ -121,6 +137,7 @@ const Seller = () => {
                                     isfavorit={true}
                                 />)
                     }
+                    </div>
                 </div>
             </div>
         </>

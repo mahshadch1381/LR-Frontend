@@ -3,8 +3,9 @@ import ProductCard from './ProductCard';
 import styles from "./../styles/Search.module.css";
 import styles2 from "./../styles/Searchsidebar.module.css";
 import styles3 from "./../styles/SearchRightSide.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from 'axios';
+
 
 
 const laptops = [
@@ -81,6 +82,21 @@ const moveToPanel = () => {
 
 const Search = () => {
 
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+          setScreenWidth(window.innerWidth);
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        // Clean up the event listener when the component unmounts
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
+
     const [laptop, setlaptop] = useState([]);
 
 
@@ -99,6 +115,9 @@ const Search = () => {
 
 
     const searchlaptop = () => {
+
+
+
         const searchinfo = {
             laptop: {
                 cpu: cpu,
@@ -120,12 +139,14 @@ const Search = () => {
             })
     }
 
+    const screenfalg = screenWidth < 1000;
 
 
     return (
         <>
-            <div className={styles.laptopcontainer}>
-                <div className={styles.row}>
+           <div className={styles.result_list}>
+            <div className={screenfalg? styles.container1 : styles.container2}>
+                <div className={screenfalg? styles.row1 : styles.row2}>
                     {
                         laptop.map(laptop =>
                             // console.log(laptop),
@@ -144,6 +165,7 @@ const Search = () => {
                                 price={laptop.price}
                             />)
                     }
+                </div>
                 </div>
             </div>
             <div className={styles3.right}>

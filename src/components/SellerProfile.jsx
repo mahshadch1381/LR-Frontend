@@ -17,11 +17,11 @@ import { Link } from "react-router-dom";
     }
 
     const moveToSearch = () => {
-        window.location.href = '/search'
+        window.location.href = '/seller-product'
     }
 
     const moveToPanel = () => {
-        window.location.href = '/panel'
+        window.location.href = '/seller'
     }
 
     const SellerProfile = () => {
@@ -142,13 +142,13 @@ import { Link } from "react-router-dom";
                         Home
                     </Link>
                     <button className={styles2.profile_sidebar_button} onClick={moveToSearch}>
-                        Search for Laptop
+                        Add Laptop
                     </button>
                     <button className={styles2.profile_sidebar_button} onClick={moveToPanel}>
-                        Panel
+                        Seller Panel
                     </button>
                     <button className={styles2.profile_sidebar_button} onClick={logout}>
-                        Logout
+                        Seller Logout
                     </button>
                 </div>
             </div>

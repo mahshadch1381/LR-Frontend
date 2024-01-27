@@ -93,17 +93,27 @@ const moveToSearch = () => {
 
 const Panel = () => {
 
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
     const [user, setuser] = useState({ Info: [] });
     const [laptop, setlaptop] = useState([]);
 
     if (!localStorage.getItem('token')) {
         window.location.href = '/'
     }
-
-
-
-
-
 
     const getuser = () => {
         axios.get("http://127.0.0.1:8088/users/profile", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
@@ -141,8 +151,10 @@ const Panel = () => {
         console.log(laptop);
     }, []); // Log the laptops state whenever it changes
 
+    const screenfalg = screenWidth < 1000;
 
 
+    
     return (
 
         <>
@@ -171,9 +183,9 @@ const Panel = () => {
                 </div>
 
             </div>
-
-            <div className={styles.container}>
-                <div className={styles.row}>
+            <div className={styles.list_liked}>
+            <div className={screenfalg? styles.container1 : styles.container2}>
+                <div className={screenfalg? styles.row1 : styles.row2}>
                     {laptop &&
 
                         laptop.map(
@@ -197,6 +209,7 @@ const Panel = () => {
                                     isfavorit={true}
                                 />)
                     }
+                    </div>
                 </div>
             </div>
         </>
