@@ -95,14 +95,15 @@ const SellerProduct = () => {
         <>
 
             <div className={styles3.right}>
-                <h1 className={styles3.rightfont}>Add laptop</h1>
+                <h1 className={styles3.rightfont}>Uploaded Image</h1>
                 <div className={styles2.sidebar2}>
-                    <h1>Choose what you want</h1>
+                    <h1>Add what you have</h1>
 
                     <div className={styles.container}>
                         <form >
                             <div>
                                 <input className={styles.uploadfile_choose} type="file" onChange={handleFileChange} />
+                                <button className={styles.upload_upload} type="button" onClick={handleUpload}>Upload</button>
                             </div>
                             {/* <input type="text" name="txt" placeholder="cpu" required="" value={cpu} onChange={(e) => setcpu(e.target.value)} /> */}
                             <label>CPU</label>
@@ -163,8 +164,8 @@ const SellerProduct = () => {
                                 <option value="apple">APPLE</option>
                             </select>
                             <div className={styles2.search_button3}>
-                                <div><button className={styles2.mybutton6} type="button" onClick={addlaptop} >add</button></div>
-                                <div><button className={styles2.mybutton6} onClick={moveToPanel} type="button" >Panel</button></div>
+                                <div><button className={styles2.mybutton6} type="button" onClick={addlaptop} >Add</button></div>
+                                <div><button className={styles2.mybutton6} onClick={moveToPanel} type="button" >Seller Panel</button></div>
                             </div>
 
                         </form>

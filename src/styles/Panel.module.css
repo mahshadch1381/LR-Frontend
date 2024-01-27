@@ -32,10 +32,7 @@
     transition: .2s ease-in;
     cursor: pointer;
 }
-.list_liked{
-  margin-top: 100px;
 
-}
     .container1 {
       flex-direction: column;
       margin-left: 370px;
@@ -49,7 +46,7 @@
 
     .container2 {
         display: flex;
-        overflow-y: auto; 
+        overflow-y: auto;
         margin-left: 440px;
         margin-right: 140px;
         margin-top: 150px;

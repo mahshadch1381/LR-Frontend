@@ -8,6 +8,71 @@ import ProductCard from "./ProductCard";
 
 
 
+// const laptops = [
+//     {
+//         image_url: "https://image.torob.com/base/images/_3/79/_379dUgbo3opHhCk.jpg_/0x352.webp",
+//         redirect_url: "https://torob.com/p/f0162cbd-523b-45ea-9788-ed371d430dd5/%D9%84%D9%BE-%D8%AA%D8%A7%D9%BE-%D9%84%D9%86%D9%88%D9%88-ideapad3-12gb-ram-512gb-ssd-1tb-hdd-i3/",
+//         cpu: "core i7",
+//         brand: "Asus",
+//         ram: 32,
+//         hdd: 256,
+//         ssd: 128,
+//         price: "$795",
+//         id: 123,
+//         isfavorit: false
+//     },
+
+//     {
+//         image_url: "https://image.torob.com/base/images/YJ/ak/YJaktypPem--_GQW.jpg_/280x280.webp",
+//         redirect_url: "https://torob.com/p/f0162cbd-523b-45ea-9788-ed371d430dd5/%D9%84%D9%BE-%D8%AA%D8%A7%D9%BE-%D9%84%D9%86%D9%88%D9%88-ideapad3-12gb-ram-512gb-ssd-1tb-hdd-i3/",
+//         cpu: "core i7",
+//         brand: "Asus",
+//         ram: 32,
+//         hdd: 256,
+//         ssd: 128,
+//         price: "$795",
+//         id: 123,
+//         isfavorit: false
+//     },
+
+//     {
+//         image_url: "https://image.torob.com/base/images/Ji/Dw/JiDwlQMYlC5moD-e.webp_/280x280.webp",
+//         redirect_url: "https://torob.com/p/f0162cbd-523b-45ea-9788-ed371d430dd5/%D9%84%D9%BE-%D8%AA%D8%A7%D9%BE-%D9%84%D9%86%D9%88%D9%88-ideapad3-12gb-ram-512gb-ssd-1tb-hdd-i3/",
+//         cpu: "core i7",
+//         brand: "Asus",
+//         ram: 32,
+//         hdd: 256,
+//         ssd: 128,
+//         price: "$795",
+//         id: 123,
+//         isfavorit: false
+//     },
+//     {
+//         image_url: "https://image.torob.com/base/images/et/7F/et7FR4z7C9DJdODF.jpg_/0x176.webp",
+//         redirect_url: "https://torob.com/p/f0162cbd-523b-45ea-9788-ed371d430dd5/%D9%84%D9%BE-%D8%AA%D8%A7%D9%BE-%D9%84%D9%86%D9%88%D9%88-ideapad3-12gb-ram-512gb-ssd-1tb-hdd-i3/",
+//         cpu: "core i7",
+//         brand: "Asus",
+//         ram: 32,
+//         hdd: 256,
+//         ssd: 128,
+//         price: "$795",
+//         id: 123,
+//         isfavorit: false
+//     },
+//     {
+//         image_url: "https://image.torob.com/base/images/nw/Wk/nwWk_rpBVQjESiQe.jpg_/0x176.webp",
+//         redirect_url: "https://torob.com/p/f0162cbd-523b-45ea-9788-ed371d430dd5/%D9%84%D9%BE-%D8%AA%D8%A7%D9%BE-%D9%84%D9%86%D9%88%D9%88-ideapad3-12gb-ram-512gb-ssd-1tb-hdd-i3/",
+//         cpu: "core i7",
+//         brand: "Asus",
+//         ram: 32,
+//         hdd: 256,
+//         ssd: 128,
+//         price: "$795",
+//         id: 123,
+//         isfavorit: false
+//     }
+// ]
+
 const logout = () => {
     localStorage.removeItem('token')
     window.location.href = '/'
