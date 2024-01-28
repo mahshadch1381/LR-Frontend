@@ -6,22 +6,22 @@ import styles2 from "../styles/Penelright.module.css";
 import { useEffect, useState } from "react";
 import axios from 'axios';
 
-const AdminPanel = () => {
+const AdminPanelUsers = () => {
 
     const handle_logout = () => {
         localStorage.removeItem('token')
         window.location.href = '/'
     }
-    const handle_Adminusers = () => {  // to do
-        window.location.href = '/admin-panel-users'
+    const handle_laptops = () => {
+        window.location.href = '/admin-panel'
 
     }
-    const [laptop, setlaptop] = useState([]);
+    const [user, setuser] = useState([]);
 
     const getlaptop = () => {
-        axios.get("http://127.0.0.1:8088/backoffice/laptops/", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        axios.get("http://127.0.0.1:8088/backoffice/users/", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(res => {
-                setlaptop(res.data.data.laptops)
+                setuser(res.data.data.users)
             }
             )
             .catch(err => {
@@ -49,7 +49,7 @@ const AdminPanel = () => {
 
     return (
         <div>
-            <h1 className={styles2.hr_form}>All laptops we have</h1>
+            <h1 className={styles2.hr_form}>All users we have</h1>
             <div className={styles2.panel_right}>
                 
                 <div className={styles.sidebar}>
@@ -61,30 +61,25 @@ const AdminPanel = () => {
                     <button onClick={handle_logout} className={styles.mybutton4} >
                         Logout
                     </button>
-                    <button onClick={handle_Adminusers} className={styles.mybutton4} >
-                        All users
+                    <button onClick={handle_laptops} className={styles.mybutton4} >
+                        All laptops
                     </button>
                 </div>
                 <div style={{ width: '300px', height: '750px', overflowY: 'auto', marginLeft: '21%',marginTop:'80px' }}>
                     <ul style={{ listStyle: 'none', padding: '0', }}>
-                        {laptop &&
-                            laptop.map(
-                                laptop =>
-                                    <li key={laptop.ID} style={{ padding: '6px', border: '10px solid #eee'}}>
+                        {user &&
+                            user.map(
+                                user =>
+                                    <li key={user.ID} style={{ padding: '6px', border: '10px solid #eee'}}>
                                         <p className={styles.text_admin_postcard}>
-                                           id: {laptop.ID},
+                                           id: {user.ID},
                                             <br/>
-                                           cpu: {laptop.CPU},
+                                           User name: {user.Name},
                                             <br/>
-                                            RAM: {laptop.RAM},
-                                            <br/>
-                                            SSD: {laptop.SSD},
-                                            <br/>
-                                            Company:{laptop.Company}
-                                            <br/>
-                                            graphic_card:{laptop.Graphic}
+                                            role: {user.Role},
+
                                             </p>
-                                        <button className={styles.button_delete_admin_panel} onClick={() => handle_remove(laptop.ID)}>delete</button>
+                                        <button className={styles.button_delete_admin_panel} onClick={() => handle_remove(user.ID)}>delete</button>
                                     </li>
                             )
                         }
@@ -96,7 +91,7 @@ const AdminPanel = () => {
     );
 };
 
-export default AdminPanel;
+export default AdminPanelUsers;
 // {
 //     laptop.map(laptop => (
 //         <li style={{ padding: '8px', borderBottom: '1px solid #eee' }}>

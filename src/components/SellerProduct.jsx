@@ -40,7 +40,7 @@ const SellerProduct = () => {
     const [scereen, setscereen] = useState('13');
     const [company, setcompany] = useState('hp');
     const [filePath, setFilePath] = useState('')
-    const [price, setprice] = useState("2000")
+    const [price, setprice] = useState("0")
 
     const addlaptop = () => {
         const searchinfo = {
@@ -48,7 +48,7 @@ const SellerProduct = () => {
                 ram: parseInt(ram),
                 ssd: parseInt(ssd),
                 hdd: parseInt(hdd),
-                graphic_card: parseInt(graphic),
+                graphic: parseInt(graphic),
                 screen_size: scereen,
                 company: company,
                 price: price,
@@ -63,7 +63,6 @@ const SellerProduct = () => {
             });
     };
 
-    const screenfalg = screenWidth < 1000;
 
     const moveToPanel = () => {
         window.location.href = '/seller';
@@ -180,6 +179,14 @@ const SellerProduct = () => {
                                 <option value="asus">ASUS</option>
                                 <option value="apple">APPLE</option>
                             </select>
+                            <label>Price</label>
+                    <input
+                        type="text"
+                        name="price"
+                        required=""
+                        value={price}
+                        onChange={(e) => setprice(e.target.value)}
+                    />
                             <div className={styles2.search_button3}>
                                 <div><button className={styles2.mybutton6} type="button" onClick={addlaptop} >Add</button></div>
                                 <div><button className={styles2.mybutton6} onClick={moveToPanel} type="button" >Seller Panel</button></div>

@@ -15,7 +15,7 @@ const laptop = {
 };
 
 const SellerCard = (props) => {
-  const {id, cpu, ram, ssd, hdd, graphic_card, screen_size, company, image_url, redirect_url, price } = props;
+  const {id, cpu, ram, ssd, hdd, graphic, screen_size, company, image_url, redirect_url, price } = props;
 
     const handle_edit = () => {
       window.location.href = '/seller-edit/' + id;
@@ -31,7 +31,7 @@ const SellerCard = (props) => {
         <p >ram : {ram}</p>
         <p >ssd : {ssd}</p>
         <p >hdd : {hdd}</p>
-        <p >graphic card : {graphic_card}</p>
+        <p >graphic card : {graphic}</p>
         <p >screen size : {screen_size}</p>
       <button className={styles.buttomn_sellercard} onClick={handle_edit}>
         edit

@@ -180,7 +180,7 @@ const Seller = () => {
                                     ram={laptop.ram}
                                     ssd={laptop.ssd}
                                     hdd={laptop.hdd}
-                                    graphic_card={laptop.graphic_card}
+                                    graphic={laptop.graphic}
                                     screen_size={laptop.screen_size}
                                     company={laptop.company}
                                     image_url={laptop.image_url}

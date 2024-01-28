@@ -16,6 +16,7 @@ import SellerProduct from "./components/SellerProduct";
 import ProductCard from "./components/SellerCard";
 import SellerEdit from "./components/SellerEdit";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import AdminPanelUsers from "./components/AdminPanelUsers";
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/admin-panel" element={<AdminPanel />} />
+        <Route path="/admin-panel-users" element={<AdminPanelUsers />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
