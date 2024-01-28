@@ -14,10 +14,11 @@ const laptop = {
   price: 1200
 };
 
-const ProductCard = (props) => {
-  const {id, cpu, ram, ssd, hdd, graphic_card, screen_size, company, image_url, redirect_url, price } = laptop;
+const SellerCard = (props) => {
+  const {id, cpu, ram, ssd, hdd, graphic_card, screen_size, company, image_url, redirect_url, price } = props;
 
     const handle_edit = () => {
+      window.location.href = '/seller-edit/' + id;
 
     }
 
@@ -39,4 +40,4 @@ const ProductCard = (props) => {
   );
 };
 
-export default ProductCard;
+export default SellerCard;

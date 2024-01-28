@@ -4,7 +4,7 @@ import styles3 from "../styles/Penelright.module.css";
 import styles2 from "../styles/Sidebar.module.css";
 import {Link} from "react-router-dom";
 import styles from "../styles/Panel.module.css";
-import ProductCard from "./ProductCard";
+import SellerCard from "./SellerCard";
 
 
 
@@ -109,18 +109,7 @@ const Seller = () => {
     //    window.location.href = '/'
    // }
 
-    const getuser = () => {
-        axios.get("http://127.0.0.1:8088/users/profile", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
-            .then(res => {
-                    setuser(res.data)
-                    // console.log(res.data)
-                    // console.log(user)
-                }
-            )
-            .catch(err => {
-                console.log(err);
-            })
-    }
+
 
     const getlaptop = async () => {
         await axios.get("http://127.0.0.1:8088/sellers/laptops/", { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
@@ -136,7 +125,6 @@ const Seller = () => {
     }
 
     useEffect(() => {
-        getuser();
         getlaptop();
 
     }, []);
@@ -186,7 +174,7 @@ const Seller = () => {
                             laptop =>
                                 // laptops.map(laptop => 
                                 // console.log(laptop),
-                                <ProductCard
+                                <SellerCard
                                     id={laptop.id}
                                     cpu={laptop.cpu}
                                     ram={laptop.ram}

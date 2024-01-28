@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import {Link, useParams} from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import styles2 from "../styles/ProfileSidebar.module.css";
 import styles3 from "./../styles/Searchsidebar.module.css";
 import styles from "./../styles/EditSellerProduct.module.css";
@@ -22,20 +22,19 @@ const SellerEdit = () => {
     }
 
     const [laptop, setlaptop] = useState([]);
-    const [cpu, setcpu] = useState('i3');
-    const [ram, setram] = useState(4);
-    const [ssd, setssd] = useState(128);
-    const [hdd, sethdd] = useState(128);
-    const [graphic, setgraphic] = useState(4);
-    const [scereen, setscereen] = useState('13');
-    const [company, setcompany] = useState('hp');
+    const [cpu, setcpu] = useState();
+    const [ram, setram] = useState();
+    const [ssd, setssd] = useState();
+    const [hdd, sethdd] = useState();
+    const [graphic, setgraphic] = useState();
+    const [scereen, setscereen] = useState();
+    const [company, setcompany] = useState();
 
 
     const get_laptop = () => {
         axios.get(`http://127.0.0.1:8088/users/laptop/${id}`, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(res => {
                 setlaptop(res.data.laptop)
-
             })
             .catch(err => {
                 console.log(err)
@@ -46,31 +45,36 @@ const SellerEdit = () => {
         get_laptop()
 
     }, []);
- const save=() =>{  // change it
 
- }
- const remove=() =>{  // change it
 
- }
+    const save = () => {  // change it
+
+    }
+    const remove = () => {  // change it
+
+    }
+
 
 
     return (
-        <><div>
-            <div className={styles2.profile_sidebar}>
-                <Link to="/" className={styles2.profile_sidebarLink}>
-                    Home
-                </Link>
-                <button className={styles2.profile_sidebar_button} onClick={moveToSearch}>
-                    Add Laptop
-                </button>
-                <button className={styles2.profile_sidebar_button} onClick={moveToPanel}>
-                    Seller Panel
-                </button>
-                <button className={styles2.profile_sidebar_button} onClick={logout}>
-                    Seller Logout
-                </button>
+        
+        <>
+            <div>
+                <div className={styles2.profile_sidebar}>
+                    <Link to="/" className={styles2.profile_sidebarLink}>
+                        Home
+                    </Link>
+                    <button className={styles2.profile_sidebar_button} onClick={moveToSearch}>
+                        Add Laptop
+                    </button>
+                    <button className={styles2.profile_sidebar_button} onClick={moveToPanel}>
+                        Seller Panel
+                    </button>
+                    <button className={styles2.profile_sidebar_button} onClick={logout}>
+                        Seller Logout
+                    </button>
+                </div>
             </div>
-        </div>
 
             <div className={styles.my_container3}>
                 <div className={styles4.profile_right}>
