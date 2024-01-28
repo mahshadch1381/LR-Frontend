@@ -104,7 +104,7 @@ const Profile = () => {
     return (
         <div className={styles.profile_right}>
             <div className={styles.profile_h_position}>
-            <h1 className={styles.profile_right_font}>Here is the user's Profile</h1>
+            {/* <h1 className={styles.profile_right_font}>Here is the user's Profile</h1> */}
             </div>
             <div className={styles.profile_formContainer}>
                 <form>

@@ -6,6 +6,9 @@ import styles2 from "../styles/ProductcarcSidebar.module.css";
 import axios from 'axios';
 //TODO API for taking information with id
 
+const letterRegex = /[a-zA-Z]/;
+
+
 
 const moveToPanel = () => {
     window.location.href = "/panel"
@@ -21,6 +24,20 @@ const handle_logout = () => {
 }
 
 const PanelProduct = () => {
+
+    const [gav, setgov] = useState(false)
+
+    function redirectToUrl(url) {
+        console.log(url)
+        if(letterRegex.test(url)){
+            window.open(url, '_blank');
+        }
+    
+        else{
+            setgov(true)
+        }
+    
+      }
 
     const [laptop, setlaptop] = useState({})
 
@@ -76,9 +93,8 @@ const PanelProduct = () => {
                      <h4>SSD : {laptop.ssd}</h4>
                      <h4>Screen : {laptop.screen_size}</h4>
                      <h1>{laptop.price}</h1>
-                     <a href={laptop.redirect_url} target='_blank'>
-                         <button className={styles.card_button}>Visit/Buy</button>
-                     </a>
+                     <button className={styles.card_button} onClick={() => redirectToUrl(laptop.redirect_url)}>Visit/Buy</button>
+                     {gav && <p>call this number : {laptop.redirect_url}</p>}
                  </div>
              </div>
              </>

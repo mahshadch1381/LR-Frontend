@@ -29,8 +29,8 @@ const AdminPanelUsers = () => {
             })
     }
 
-    const handle_remove = (laptopid) => {
-        axios.delete(`http://127.0.0.1:8088/backoffice/laptops/${laptopid}`, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+    const handle_remove = (userId) => {
+        axios.delete(`http://127.0.0.1:8088/backoffice/users/${userId}`, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
             .then(res => {
                 console.log(res);
             }
@@ -76,7 +76,16 @@ const AdminPanelUsers = () => {
                                             <br/>
                                            User name: {user.Name},
                                             <br/>
-                                            role: {user.Role},
+                                            {
+                                                (() => {
+                                                    switch(user.Role) {
+                                                        case 1: return <p>Role: user</p>;
+                                                        case 2: return <p>Role: admin</p>;
+                                                        case 3: return <p>Role: seller</p>;
+                                                        default: return null;
+                                                    }
+                                                })()
+                                            }
 
                                             </p>
                                         <button className={styles.button_delete_admin_panel} onClick={() => handle_remove(user.ID)}>delete</button>
