@@ -79,3 +79,15 @@
     border-color: #fff;
 
 }
+.h1_tag{
+    position: absolute;
+    top: 0;
+    left: 55%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #2062b9;
+    font-family: 'Pacifico', cursive;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}

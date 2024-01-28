@@ -57,29 +57,24 @@ const SellerEdit = () => {
 
 
     return (
-        
-        <>
-            <div>
-                <div className={styles2.profile_sidebar}>
-                    <Link to="/" className={styles2.profile_sidebarLink}>
-                        Home
-                    </Link>
-                    <button className={styles2.profile_sidebar_button} onClick={moveToSearch}>
-                        Add Laptop
-                    </button>
-                    <button className={styles2.profile_sidebar_button} onClick={moveToPanel}>
-                        Seller Panel
-                    </button>
-                    <button className={styles2.profile_sidebar_button} onClick={logout}>
-                        Seller Logout
-                    </button>
-                </div>
+        <><div>
+            <div className={styles2.profile_sidebar}>
+                <Link to="/" className={styles2.profile_sidebarLink}>
+                    Home
+                </Link>
+                <button className={styles2.profile_sidebar_button} onClick={moveToSearch}>
+                    Add Laptop
+                </button>
+                <button className={styles2.profile_sidebar_button} onClick={moveToPanel}>
+                    Seller Panel
+                </button>
+                <button className={styles2.profile_sidebar_button} onClick={logout}>
+                    Seller Logout
+                </button>
             </div>
+        </div>
 
             <div className={styles.my_container3}>
-                <div className={styles4.profile_right}>
-                    <h1 className={styles4.profile_right_font}>Change or Remove what you want</h1>
-                </div>
                 <form >
                     {/* <input type="text" name="txt" placeholder="cpu" required="" value={cpu} onChange={(e) => setcpu(e.target.value)} /> */}
                     <label>CPU</label>
@@ -146,6 +141,9 @@ const SellerEdit = () => {
 
                 </form>
             </div>
+
+
+
         </>
 
     );
